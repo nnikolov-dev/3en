@@ -2,34 +2,44 @@
 @import "../../assets/styles/variables/fonts.scss";
 @import "../../assets/styles/variables/displays.scss";
 
+.JumbotronContent {
+    max-width: 60%;
+}
+
 .Jumbotron {
-    min-height: 700px;
+    height: 500px;
     position: relative;
-    display: flex;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: 50% 50%;
-    box-shadow: inset 0 30px 30px -30px $shadow;
-    border-bottom-right-radius: 30%;
+    background-position: 50% 80%;
     animation: animatedBackground 1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    border-bottom: 5px solid $light-blue;
+    box-sizing: content-box;
 
-    .Dark {
-        z-index: 1;
+    .Video {
         position: absolute;
         width: 100%;
+        object-fit: cover;
+        object-position: 50% 70%;
         height: 100%;
-        background: rgba($black, 0.5);
+    }
+
+    .Dark {
+        z-index: 2;
+        position: absolute;
+        width: 100%;
+        height: inherit;
+        background: rgba($blue, 0.7);
         border-bottom-right-radius: inherit;
         border-bottom-left-radius: inherit;
     }
 
-    * {
-        &:not(.Dark) {
-            z-index: 2;
-        }
+    .Content {
+        position: relative;
+        z-index: 3;
+        color: $white;
     }
-
 
 }
 
@@ -45,13 +55,20 @@
     }
 }
 
+
+@media only screen and (max-width: $phone) {
+    .JumbotronContent {
+        max-width: 100%;
+    }
+}
+
 @keyframes animatedBackground {
 	from {
         background-position: 50% 35%;
         opacity: 0;
     }
 	to {
-        background-position: 50% 50%;
+        background-position: 50% 80%;
         opacity: 1;
     }
 }

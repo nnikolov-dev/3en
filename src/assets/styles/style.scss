@@ -14,7 +14,7 @@ body {
     margin: 0;
     padding: 0;
     color: $black;
-    background: $background;
+    background: $text-white;
     font-family: $font-text;
 
     * {
@@ -33,24 +33,13 @@ body {
     a {
         text-decoration: none;
         transition: all .3s ease;
-        color: $blue;
-        border-bottom: 1px solid transparent;
+        color: $black;
         transition: all 0.15s ease-in-out;
-
-        &:hover {
-            border-color: $blue;
-        }
     }
 
     h1 {
-        color: $blue;
+        color: $black;
         font-family: $font-title;
         font-weight: 700;
-    }
-
-    .container {
-        flex: 1;
-        position: relative;
-        width: inherit;
     }
 }

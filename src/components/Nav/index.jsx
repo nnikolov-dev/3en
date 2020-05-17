@@ -1,95 +1,51 @@
-import React, {useState, useRef, useEffect} from 'react'
+import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import {Link} from 'gatsby'
-import {window} from 'browser-monads'
-import Layout from '../Layout'
 import styles from './nav.module.scss'
 
-const Menu = ({items, dark, fixed, navRef}) => {
+import logoImage from '../../assets/images/logo.svg'
+
+const NavItem = ({children, address, active}) => (
+	<div
+		className={`${styles.NavItem} ${active && styles.Active}`}
+	>
+		<Link to={address}>{children}</Link>
+	</div>
+)
+
+const Nav = ({children}) => {
 	const [visible, setVisible] = useState(false)
 	const toggleNav = () => setVisible(!visible)
 	return (
-		<div className={`${dark ? styles.Dark : styles.Nav} ${fixed && styles.Fixed}`} ref={navRef}>
-			<Layout>
-				<div className={styles.Items}>
-					{items.map(({title, address, active}) => (
-						<div
-							className={`${styles.Item} ${visible && styles.Visible} ${active && styles.Active}`}
-							key={title}
-						>
-							<Link to={address}>{title}</Link>
-						</div>
-					))}
-					<div className={styles.Toggle} onClick={toggleNav}>
-						<div />
-						<div />
-						<div />
+		<div className={styles.Nav}>
+			<div className={styles.Logo}>
+				<img src={logoImage} alt="Logo" />
+			</div>
+			<div className={styles.Items}>
+				{children}
+			</div>
+			<div className={`${styles.MobileItems} ${visible && styles.Visible}`}>
+				{children.map((child) => (
+					<div className={styles.Item}>
+						{child}
 					</div>
-				</div>
-			</Layout>
+				))}
+			</div>
+			<div className={styles.Toggle} onClick={toggleNav}>
+				<div />
+				<div />
+				<div />
+			</div>
 		</div>
 	)
 }
 
-const Nav = ({items, dark}) => {
-	const navRef = useRef()
-	const navRefFixed = useRef()
-
-	const handleResize = () => {
-		if (navRef.current && navRefFixed.current) {
-			navRefFixed.current.style.width = `${navRef.current.getBoundingClientRect().width}px`
-		}
-	}
-
-	const handleScroll = () => {
-		if (navRef.current && navRefFixed.current) {
-			if (navRef.current.offsetTop <= window.scrollY) {
-				navRef.current.style.visibility = 'hidden'
-				navRefFixed.current.style.visibility = 'visible'
-				navRef.current.style.opacity = 0
-				navRefFixed.current.style.opacity = 1
-			} else {
-				navRef.current.style.opacity = 1
-				navRefFixed.current.style.opacity = 0
-				navRef.current.style.visibility = 'visible'
-				navRefFixed.current.style.visibility = 'hidden'
-			}
-			handleResize()
-		}
-	}
-
-	useEffect(() => {
-		handleScroll()
-		handleResize()
-
-		window.addEventListener('scroll', handleScroll)
-		window.addEventListener('resize', handleResize)
-		return () => {
-			window.removeEventListener('scroll', handleScroll)
-			window.removeEventListener('resize', handleResize)
-		}
-	}, [])
-
-	return (
-		<>
-			<Menu navRef={navRef} items={items} dark={dark} />
-			<Menu navRef={navRefFixed} items={items} dark={dark} fixed />
-		</>
-	)
-}
-
 Nav.propTypes = {
-	items: PropTypes.arrayOf(PropTypes.shape({
-		title: PropTypes.string,
-		address: PropTypes.address,
-		active: PropTypes.bool,
-	})),
-	dark: PropTypes.bool,
+	children: PropTypes.arrayOf(PropTypes.element),
 }
 
 Nav.defaultProps = {
-	items: [],
-	dark: false,
+	children: [],
 }
 
-export default Nav
+export {Nav, NavItem}

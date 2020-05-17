@@ -1,11 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import aerialVideo from '../../assets/videos/aerial.mp4'
+import aerialImage from '../../assets/videos/aerial.jpg'
 import styles from './jumbotron.module.scss'
+
+const JumbotronContent = ({children}) => (
+	<div className={styles.JumbotronContent}>
+		{children}
+	</div>
+)
 
 const Jumbotron = ({image, children, justifyContent, alignItems, dark}) => (
 	<div className={styles.Jumbotron} style={{backgroundImage: `url(${image})`, justifyContent, alignItems}}>
+		<video className={styles.Video} autoPlay muted poster={aerialImage} playsInline>
+			<source src={aerialVideo} type="video/mp4" />
+		</video>
 		{dark && (<div className={styles.Dark} />)}
-		{children}
+		<div className={styles.Content}>
+			{children}
+		</div>
 	</div>
 )
 
@@ -18,11 +31,11 @@ Jumbotron.propTypes = {
 }
 
 Jumbotron.defaultProps = {
-	image: 'https://images.unsplash.com/photo-1583560306723-4e50a15636c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
+	image: aerialImage,
 	children: '',
 	justifyContent: 'center',
 	alignItems: 'center',
 	dark: false,
 }
 
-export default Jumbotron
+export {JumbotronContent, Jumbotron}

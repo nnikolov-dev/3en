@@ -2,9 +2,15 @@ import React from 'react'
 import styles from './container.module.scss'
 
 const Container = ({children}) => (
-	<div className={styles.Container}>
+	<main className={styles.Container}>
+		{children}
+	</main>
+)
+
+const Content = ({children}) => (
+	<div className={styles.Content}>
 		{children}
 	</div>
 )
 
-export default Container
+export {Container, Content}

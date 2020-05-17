@@ -48,5 +48,10 @@
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-react-hooks": "^2.5.0"
+  },
+  "bit": {
+    "env": {},
+    "componentsDefaultDirectory": "components/{name}",
+    "packageManager": "npm"
   }
 }

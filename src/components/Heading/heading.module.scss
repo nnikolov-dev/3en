@@ -1,0 +1,55 @@
+@import "../../assets/styles/variables/colors.scss";
+@import "../../assets/styles/variables/fonts.scss";
+@import "../../assets/styles/variables/displays.scss";
+
+
+.H1 {
+    color: inherit;
+    font-family: $font-heading;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.H2 {
+    @extend .H1;
+    margin-top: 0;
+    font-size: 1.7rem;
+    font-weight: 400;
+}
+
+.H3 {
+    @extend .H1;
+    margin-top: 0;
+    font-family: $font-text;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+@media only screen and (max-width: $medium) {
+    .H1 {
+        font-size: 3rem;
+    }
+    
+    .H2 {
+        font-size: 1.5rem;
+    }
+
+    .H3 {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: $phone) {
+    .H1 {
+        font-size: 2.5rem;
+    }
+    
+    .H2 {
+        font-size: 1.3rem;
+    }
+
+    .H3 {
+        font-size: 1rem;
+    }
+}

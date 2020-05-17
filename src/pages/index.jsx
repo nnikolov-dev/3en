@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'gatsby'
 import Helmet from 'react-helmet'
+import Slider from 'react-slick'
 import Bar from '../components/Bar'
 import {Nav, NavItem} from '../components/Nav'
 import Layout from '../components/Layout'
@@ -13,6 +14,9 @@ import Card from '../components/Card'
 import Section from '../components/Section'
 import {H1, H2, H3} from '../components/Heading'
 import logoImage from '../assets/images/logo.svg'
+
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 const Index = () => (
 	<>
@@ -62,6 +66,40 @@ const Index = () => (
 							</JumbotronContent>
 						</Layout>
 					</Section>
+					<section className="carousel">
+						<Layout>
+							<Slider dots infinite autoplay arrows={false}>
+								<div className="item">
+									<JumbotronContent>
+										<H1>Criminal Law</H1>
+										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, ad aspernatur. Distinctio aliquid velit deleniti ex veritatis magnam temporibus architecto optio beatae consectetur! Deserunt itaque accusamus laboriosam nam illo quis.</p>
+										<Button accent>View More</Button>
+									</JumbotronContent>
+								</div>
+								<div className="item">
+									<JumbotronContent>
+										<H1>Matriomonial Law</H1>
+										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, ad aspernatur. Distinctio aliquid velit deleniti ex veritatis magnam temporibus architecto optio beatae consectetur! Deserunt itaque accusamus laboriosam nam illo quis.</p>
+										<Button accent>View More</Button>
+									</JumbotronContent>
+								</div>
+								<div className="item">
+									<JumbotronContent>
+										<H1>Motoring Offenses</H1>
+										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, ad aspernatur. Distinctio aliquid velit deleniti ex veritatis magnam temporibus architecto optio beatae consectetur! Deserunt itaque accusamus laboriosam nam illo quis.</p>
+										<Button accent>View More</Button>
+									</JumbotronContent>
+								</div>
+								<div className="item">
+									<JumbotronContent>
+										<H1>Other</H1>
+										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, ad aspernatur. Distinctio aliquid velit deleniti ex veritatis magnam temporibus architecto optio beatae consectetur! Deserunt itaque accusamus laboriosam nam illo quis.</p>
+										<Button accent>View More</Button>
+									</JumbotronContent>
+								</div>
+							</Slider>
+						</Layout>
+					</section>
 				</div>
 			</Content>
 			<Footer />

@@ -24,7 +24,13 @@
     }
 }
 
-.Active {
+.Accent {
     color: $black;
-    background: rgba($white, 0.5);
+    border-color: $black;
+
+    &:hover {
+        color: $black;
+        background: $white;
+        border-color: $white; 
+    }
 }

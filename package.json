@@ -37,7 +37,9 @@
     "react": "^16.5.1",
     "react-animated-css": "^1.2.1",
     "react-dom": "^16.5.1",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-slick": "^0.26.1",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "eslint": "^5.7.0",

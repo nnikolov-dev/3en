@@ -2,19 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './button.module.scss'
 
-const Button = ({active, children}) => (
-	<div className={`${styles.Button} ${active && styles.Active}`}>
+const Button = ({accent, children}) => (
+	<div className={`${styles.Button} ${accent && styles.Accent}`}>
 		{children}
 	</div>
 )
 
 Button.propTypes = {
-	active: PropTypes.bool,
+	accent: PropTypes.bool,
 	children: PropTypes.string,
 }
 
 Button.defaultProps = {
-	active: false,
+	accent: false,
 	children: '',
 }
 

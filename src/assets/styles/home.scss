@@ -30,6 +30,18 @@
 
         }
     }
+
+    .carousel {
+        background: $green;
+        padding: 5rem 0;
+        padding-top: 2.5rem;
+
+        .item {
+            display: flex;
+            justify-content: center;
+            padding-left: 25%;
+        }
+    }
 }
 
 @media only screen and (max-width: $medium) {
@@ -56,6 +68,12 @@
                 &:nth-last-of-type(even) {
                     text-align: center;
                 }
+            }
+        }
+
+        .carousel {
+            .item {
+                padding-left: 0;
             }
         }
     }

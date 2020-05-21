@@ -1,20 +1,34 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './button.module.scss'
 
-const Button = ({accent, children}) => (
-	<div className={`${styles.Button} ${accent && styles.Accent}`}>
+const Button = ({children}) => (
+	<button
+		type="button"
+		className="
+			bg-transparent
+			hover:bg-light_blue
+			text-blue-700
+			font-title
+			font-bold
+			uppercase
+			text-sm
+			py-2
+			px-8
+			border
+			border-blue-500
+			hover:border-light_blue
+			rounded
+		"
+	>
 		{children}
-	</div>
+	</button>
 )
 
 Button.propTypes = {
-	accent: PropTypes.bool,
 	children: PropTypes.string,
 }
 
 Button.defaultProps = {
-	accent: false,
 	children: '',
 }
 

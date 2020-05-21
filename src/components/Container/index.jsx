@@ -1,14 +1,13 @@
 import React from 'react'
-import styles from './container.module.scss'
 
 const Container = ({children}) => (
-	<main className={styles.Container}>
+	<main className="flex flex-col min-h-screen">
 		{children}
 	</main>
 )
 
 const Content = ({children}) => (
-	<div className={styles.Content}>
+	<div className="flex-1">
 		{children}
 	</div>
 )

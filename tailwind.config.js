@@ -10,6 +10,7 @@ module.exports = {
 			display: ['Gilroy', 'sans-serif'],
 			body: ['Graphik', 'sans-serif'],
 			title: ['Montserrat', 'serif'],
+			heading: ['Lora', 'serif'],
 		},
 		borderWidth: {
 			default: '1px',
@@ -30,5 +31,9 @@ module.exports = {
 			0: 0,
 			8: '2rem',
 		},
+		objectPosition: {
+			jumbotron: '50% 70%',
+		},
 	},
+	purge: ['./src/**/*.js', './src/**/*.jsx', './src/**/*.ts', './src/**/*.tsx'],
 }

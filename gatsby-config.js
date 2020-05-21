@@ -1,6 +1,3 @@
-const tailwindCss = require('tailwindcss')
-const tailwindConfig = require('./tailwind.config')
-
 module.exports = {
 	siteMetadata: {
 		title: 'Burlington Chambers',
@@ -25,16 +22,15 @@ module.exports = {
 		},
 		'gatsby-plugin-postcss',
 		'gatsby-plugin-react-helmet',
-		{
-			resolve: 'gatsby-plugin-sass',
-			options: {
-			  postCssPlugins: [
-					tailwindCss,
-					tailwindConfig, // Optional: Load custom Tailwind CSS configuration
-			  ],
-			},
-		  },
+		'gatsby-plugin-sass',
 		// {
+		// 	resolve: 'gatsby-plugin-purgecss',
+		// 	options: {
+		// 		printRejected: false,
+		// 		develop: true,
+		// 		tailwind: true,
+		// 	},
+		// },
 		//   resolve: `@kentico/gatsby-source-kontent`,
 		//   options: {
 		//     deliveryClientConfig: {

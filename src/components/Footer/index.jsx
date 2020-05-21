@@ -1,19 +1,18 @@
 import React from 'react'
 import {Link} from 'gatsby'
 import Layout from '../Layout'
-import styles from './footer.module.scss'
 
 import logoImage from '../../assets/images/logo.svg'
 
 const Footer = () => (
-	<footer className={styles.Footer}>
+	<footer className="py-16 bg-black text-white">
 		<Layout>
-			<div className={styles.Logo}>
-				<img src={logoImage} akt="Logo" />
+			<div className="max-w-sm">
+				<img src={logoImage} alt="Logo" />
 			</div>
-			<div className={styles.Columns}>
-				<div className={styles.Column}>
-					<h1>Working Hours</h1>
+			<div className="flex justify-between flex-wrap my-8 w-full">
+				<div className="pr-8">
+					<h1 className="uppercase text-xl">Working Hours</h1>
 					<ul>
 						<li>
 							Monday (9:00 - 18:00)
@@ -38,8 +37,8 @@ const Footer = () => (
 						</li>
 					</ul>
 				</div>
-				<div className={styles.Column}>
-					<h1>Services</h1>
+				<div className="pr-8">
+					<h1 className="uppercase text-xl">Services</h1>
 					<ul>
 						<li>
 							<Link to="/">Criminal Law</Link>
@@ -55,8 +54,8 @@ const Footer = () => (
 						</li>
 					</ul>
 				</div>
-				<div className={styles.Column}>
-					<h1>SIte Map</h1>
+				<div className="pr-8">
+					<h1 className="uppercase text-xl">Site Map</h1>
 					<ul>
 						<li><Link to="/">Home</Link></li>
 						<li><Link to="/">About</Link></li>
@@ -64,8 +63,8 @@ const Footer = () => (
 						<li><Link to="/">Services</Link></li>
 					</ul>
 				</div>
-				<div className={styles.Column}>
-					<h1>Our Office</h1>
+				<div>
+					<h1 className="uppercase text-xl">Our Office</h1>
 					<ul>
 						<li>12 John Doe</li>
 						<li>Business Park</li>
@@ -75,7 +74,7 @@ const Footer = () => (
 					</ul>
 				</div>
 			</div>
-			<div className={styles.Bottom}>
+			<div className="flex justify-between text-sm border-t border-white border-opacity-25 pt-2">
 				<div>
 					&copy; 2020 Your Company. All Rights Reserved | Terms of Service
 				</div>

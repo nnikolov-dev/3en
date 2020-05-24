@@ -36,4 +36,8 @@ module.exports = {
 		},
 	},
 	purge: ['./src/**/*.js', './src/**/*.jsx', './src/**/*.ts', './src/**/*.tsx'],
+	variants: {
+		backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
+		translate: ['responsive', 'hover', 'focus', 'group-hover'],
+	},
 }

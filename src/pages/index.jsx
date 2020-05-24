@@ -36,38 +36,72 @@ const Index = () => (
 							</div>
 						</Layout>
 					</Jumbotron>
+					<div className="flex flex-wrap justify-center border-t-4 border-b-4 border-light_blue">
+						<div className="md:w-1/2 bg-black text-white py-20">
+							<Layout>
+								<h1 className="font-title font-bold text-2xl">Our Expertise</h1>
+								<p className="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, ut autem nam suscipit dicta dolores fugit perferendis quod officiis ducimus temporibus vel molestiae magnam, soluta debitis similique tempora praesentium dolorem. <a href="/about">Find more about our services</a></p>
+							</Layout>
+						</div>
+						<div className="md:w-1/2 bg-blue text-white py-20">
+							<Layout>
+								<h1 className="font-title font-bold text-2xl">Our Values</h1>
+								<p className="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, ut autem nam suscipit dicta dolores fugit perferendis quod officiis ducimus temporibus vel molestiae magnam, soluta debitis similique tempora praesentium dolorem. <a href="/about">Find more about our services</a></p>
+							</Layout>
+						</div>
+					</div>
+					<div className="relative h-64 flex justify-center items-center">
+						<img
+							src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+							className="absolute w-full h-full object-cover"
+						/>
+						<div className="absolute bg-black bg-opacity-75 w-full h-full flex items-center text-center">
+							<Layout>
+								<h2 className="font-heading text-white text-lg md:text-2xl z-10">
+									&quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro veritatis quam dolorum, assumenda asperiores inventore facilis sapiente!&quot;
+								</h2>
+							</Layout>
+						</div>
+					</div>
 					<Layout>
-						<div className="flex flex-wrap justify-center text-left md:my-12">
-							<div className="p-8 md:w-1/2">
+						<div className="flex flex-wrap justify-center my-12">
+							<div className="md:pr-8 md:w-1/2 pb-8">
 								<h1 className="font-title font-bold text-blue text-2xl">Our Expertise</h1>
 								<p className="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, ut autem nam suscipit dicta dolores fugit perferendis quod officiis ducimus temporibus vel molestiae magnam, soluta debitis similique tempora praesentium dolorem. <a href="/about">Find more about our services</a></p>
 								<Button color="black">View</Button>
 							</div>
-							<div className="p-8 md:w-1/2">
-								<h1 className="font-title font-bold text-blue text-2xl">Our Expertise</h1>
-								<p className="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, ut autem nam suscipit dicta dolores fugit perferendis quod officiis ducimus temporibus vel molestiae magnam, soluta debitis similique tempora praesentium dolorem. <a href="/about">Find more about our services</a></p>
-								<Button color="black">View</Button>
-							</div>
-							<div className="p-8 md:w-1/2">
-								<h1 className="font-title font-bold text-blue text-2xl">Our Expertise</h1>
-								<p className="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, ut autem nam suscipit dicta dolores fugit perferendis quod officiis ducimus temporibus vel molestiae magnam, soluta debitis similique tempora praesentium dolorem. <a href="/about">Find more about our services</a></p>
-								<Button color="black">View</Button>
-							</div>
-							<div className="p-8 md:w-1/2">
+							<div className="md:pl-8 md:w-1/2 pb-8">
 								<h1 className="font-title font-bold text-blue text-2xl">Our Expertise</h1>
 								<p className="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, ut autem nam suscipit dicta dolores fugit perferendis quod officiis ducimus temporibus vel molestiae magnam, soluta debitis similique tempora praesentium dolorem. <a href="/about">Find more about our services</a></p>
 								<Button color="black">View</Button>
 							</div>
 						</div>
 					</Layout>
-					<section className="bg-green py-16 border-t-4 border-skin md:flex md:justify-center p-16">
-						<Slider dots infinite autoplay arrows={false}>
-							<div className="max-w-xl">
-								<h1 className="font-title font-bold text-4xl">Criminal Law</h1>
-								<p className="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, ad aspernatur. Distinctio aliquid velit deleniti ex veritatis magnam temporibus architecto optio beatae consectetur! Deserunt itaque accusamus laboriosam nam illo quis.</p>
-								<Button color="black">View More</Button>
-							</div>
-						</Slider>
+					<section className="bg-skin py-16 border-t-4 border-skin text-black">
+						<div className="max-w-xl mx-auto px-8">
+							<Slider dots infinite autoplay arrows={false}>
+								<div className="item w-full">
+									<h1 className="font-title font-bold text-4xl">Criminal Law</h1>
+									<p className="mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, ad aspernatur. Distinctio aliquid velit deleniti ex veritatis magnam temporibus architecto optio beatae consectetur! Deserunt itaque accusamus laboriosam nam illo quis.</p>
+									<Button color="black">View More</Button>
+								</div>
+								<div className="item w-full">
+									<h1 className="font-title font-bold text-4xl">Criminal Law</h1>
+									<p className="mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, ad aspernatur. Distinctio aliquid velit deleniti ex veritatis magnam temporibus architecto optio beatae consectetur! Deserunt itaque accusamus laboriosam nam illo quis.</p>
+									<Button color="black">View More</Button>
+								</div>
+								<div className="item w-full">
+									<h1 className="font-title font-bold text-4xl">Criminal Law</h1>
+									<p className="mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, ad aspernatur. Distinctio aliquid velit deleniti ex veritatis magnam temporibus architecto optio beatae consectetur! Deserunt itaque accusamus laboriosam nam illo quis.</p>
+									<Button color="black">View More</Button>
+								</div>
+								<div className="item w-full">
+									<h1 className="font-title font-bold text-4xl">Criminal Law</h1>
+									<p className="mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, ad aspernatur. Distinctio aliquid velit deleniti ex veritatis magnam temporibus architecto optio beatae consectetur! Deserunt itaque accusamus laboriosam nam illo quis.</p>
+									<Button color="black">View More</Button>
+								</div>
+							</Slider>
+						</div>
 					</section>
 				</div>
 			</div>

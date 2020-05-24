@@ -1,12 +1,13 @@
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
-import {Link} from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import tailwindConfig from '../../../tailwind.config'
 
 import logoImage from '../../assets/images/logo.svg'
 
 const NavItem = ({children, address, active}) => (
 	<div className={`mx-8 text-sm text-center font-title font-bold uppercase pb-1 border-b-2 hover:border-white hover:border-opacity-25 transition ease-in-out duration-200 ${active ? 'border-white' : 'border-transparent'}`}>
-		<Link to={address} className="text-white">{children}</Link>
+		<AniLink to={address} cover direction="bottom" bg={tailwindConfig.theme.colors.blue} className="text-white">{children}</AniLink>
 	</div>
 )
 

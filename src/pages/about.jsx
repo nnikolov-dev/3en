@@ -10,10 +10,10 @@ import Footer from '../components/Footer'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-const Index = () => (
+const About = () => (
 	<>
 		<Helmet>
-			<title>Home</title>
+			<title>About</title>
 		</Helmet>
 
 		<div className="flex flex-col min-h-screen">
@@ -24,8 +24,8 @@ const Index = () => (
 					>
 						<Layout>
 							<Nav>
-								<NavItem address="/" active>Home</NavItem>
-								<NavItem address="/about">About</NavItem>
+								<NavItem address="/">Home</NavItem>
+								<NavItem address="/about" active>About</NavItem>
 								<NavItem address="/person">The Team</NavItem>
 								<NavItem address="/">Services</NavItem>
 								<Button white>Contact</Button>
@@ -111,4 +111,4 @@ const Index = () => (
 )
 
 
-export default Index
+export default About

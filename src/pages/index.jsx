@@ -9,6 +9,7 @@ import Footer from '../components/Footer'
 
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import Card from '../components/Card'
 
 const Index = () => (
 	<>
@@ -36,19 +37,19 @@ const Index = () => (
 							</div>
 						</Layout>
 					</Jumbotron>
-					<div className="flex flex-wrap justify-center border-t-4 border-b-4 border-light_blue">
-						<div className="md:w-1/2 bg-black text-white py-20">
+					<div className="flex flex-wrap justify-center">
+						<Card>
 							<Layout>
 								<h1 className="font-title font-bold text-2xl">Our Expertise</h1>
 								<p className="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, ut autem nam suscipit dicta dolores fugit perferendis quod officiis ducimus temporibus vel molestiae magnam, soluta debitis similique tempora praesentium dolorem. <a href="/about">Find more about our services</a></p>
 							</Layout>
-						</div>
-						<div className="md:w-1/2 bg-blue text-white py-20">
+						</Card>
+						<Card color="blue">
 							<Layout>
 								<h1 className="font-title font-bold text-2xl">Our Values</h1>
 								<p className="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, ut autem nam suscipit dicta dolores fugit perferendis quod officiis ducimus temporibus vel molestiae magnam, soluta debitis similique tempora praesentium dolorem. <a href="/about">Find more about our services</a></p>
 							</Layout>
-						</div>
+						</Card>
 					</div>
 					<div className="relative h-64 flex justify-center items-center">
 						<img

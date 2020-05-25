@@ -5,13 +5,13 @@ import Layout from '../Layout'
 import logoImage from '../../assets/images/logo.svg'
 
 const Footer = () => (
-	<footer className="py-16 bg-black text-white">
+	<footer className="py-16 bg-shade text-white">
 		<Layout>
 			<div className="max-w-sm">
 				<img src={logoImage} alt="Logo" />
 			</div>
-			<div className="flex justify-between flex-wrap my-8 w-full">
-				<div className="pr-8">
+			<div className="flex justify-between flex-wrap my-4 w-full">
+				<div className="pr-8 py-4">
 					<h1 className="uppercase text-xl">Working Hours</h1>
 					<ul>
 						<li>
@@ -37,7 +37,7 @@ const Footer = () => (
 						</li>
 					</ul>
 				</div>
-				<div className="pr-8">
+				<div className="pr-8 py-4">
 					<h1 className="uppercase text-xl">Services</h1>
 					<ul>
 						<li>
@@ -54,7 +54,7 @@ const Footer = () => (
 						</li>
 					</ul>
 				</div>
-				<div className="pr-8">
+				<div className="pr-10 py-4">
 					<h1 className="uppercase text-xl">Site Map</h1>
 					<ul>
 						<li><Link to="/">Home</Link></li>
@@ -63,7 +63,7 @@ const Footer = () => (
 						<li><Link to="/">Services</Link></li>
 					</ul>
 				</div>
-				<div>
+				<div className="py-4">
 					<h1 className="uppercase text-xl">Our Office</h1>
 					<ul>
 						<li>12 John Doe</li>

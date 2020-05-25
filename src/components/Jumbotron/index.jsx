@@ -15,7 +15,7 @@ const Jumbotron = ({image, video, children, overlay}) => (
 		>
 			<source src={video} type="video/mp4" />
 		</video>
-		{overlay && (<div className="absolute w-full h-full bg-blue bg-opacity-75" />)}
+		{overlay && (<div className="absolute w-full h-full bg-primary bg-opacity-75" />)}
 		{children}
 	</header>
 )

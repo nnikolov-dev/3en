@@ -1,3 +1,4 @@
+
 module.exports = {
 	theme: {
 		screens: {
@@ -18,15 +19,6 @@ module.exports = {
 			2: '2px',
 			4: '4px',
 		},
-		colors: {
-			transparent: 'transparent',
-			blue: '#366897',
-			light_blue: '#7BBCD4',
-			black: '#1F272B',
-			white: '#FFFFFF',
-			skin: '#EAE8E1',
-			green: '#7E8370',
-		},
 		inset: {
 			0: 0,
 			8: '2rem',
@@ -34,10 +26,26 @@ module.exports = {
 		objectPosition: {
 			jumbotron: '50% 70%',
 		},
+		extend: {
+			spacing: {
+				72: '18rem',
+				84: '21rem',
+				96: '24rem',
+			},
+			colors: {
+				primary: '#366897',
+				secondary: '#7BBCD4',
+				accent: '#7E8370',
+				shade: '#1F272B',
+				lite: '#EAE8E1',
+			},
+		},
 	},
 	purge: ['./src/**/*.js', './src/**/*.jsx', './src/**/*.ts', './src/**/*.tsx'],
 	variants: {
-		backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
-		translate: ['responsive', 'hover', 'focus', 'group-hover'],
+		backgroundColor: ['responsive', 'hover', 'focus', 'group-hover', 'odd'],
+		textColor: ['responsive', 'hover', 'focus', 'group-hover', 'odd'],
+		translate: ['responsive', 'hover', 'focus', 'group-hover', 'odd'],
+		visibility: ['responsive', 'hover', 'focus', 'group-hover', 'odd'],
 	},
 }

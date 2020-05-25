@@ -47,7 +47,7 @@ const Nav = () => {
 				</NavItem>
 				<Button white>Contact</Button>
 			</div>
-			<div className={`transform p-12 flex flex-col items-center z-50 fixed w-full h-full bg-blue inset-0 transition ease-in-out duration-200 md:hidden ${visible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
+			<div className={`transform p-12 flex flex-col items-center z-50 fixed w-full h-full bg-primary inset-0 transition ease-in-out duration-200 md:hidden ${visible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
 				<div className="mb-5"><NavItem address="/">Home</NavItem></div>
 				<div className="mb-5"><NavItem address="/about">About</NavItem></div>
 				<div className="mb-5"><NavItem address="/person">The Team</NavItem></div>

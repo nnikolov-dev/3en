@@ -16,7 +16,7 @@ const NavItem = ({children, title, address}) => (
 							<svg className="block fill-current text-white w-4 h-4 absolute right-0 top-0 mr-3 mt-1 z-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /></svg>
 							<ul className="flex flex-wrap">
 								{children.map((child, i) => (
-									<li key={`nav-child-${i}`} className="p-6 w-1/2 hover:text-primary odd:bg-shade odd:text-white">{child}</li>
+									<li key={`nav-child-${i}`} className="p-6 w-1/2 hover:text-primary hover:bg-gray-100">{child}</li>
 								))}
 							</ul>
 						</div>
@@ -38,7 +38,7 @@ const Nav = () => {
 			<div className="hidden flex-row items-center sm:hidden md:flex">
 				<NavItem address="/">Home</NavItem>
 				<NavItem address="/about">About</NavItem>
-				<NavItem address="/person">The Team</NavItem>
+				<NavItem address="/about#team">The Team</NavItem>
 				<NavItem address="/services" title="Services">
 					<AniLink to="/services#1">Criminal Law</AniLink>
 					<AniLink to="/services#1">Matriomonial Law</AniLink>

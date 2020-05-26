@@ -7,6 +7,7 @@ import Jumbotron from '../components/Jumbotron'
 import Button from '../components/Button'
 import Footer from '../components/Footer'
 import Card from '../components/Card'
+import Contact from '../components/Contact'
 
 const Index = () => (
 	<>
@@ -27,6 +28,14 @@ const Index = () => (
 						</div>
 					</Layout>
 				</Jumbotron>
+				<Layout>
+					<div className="flex my-16">
+						<div className="w-2/3">
+							<Contact />
+						</div>
+						<div lassName="w-1/3" />
+					</div>
+				</Layout>
 				<div className="flex flex-wrap md:flex-no-wrap">
 					<Card>
 						<Layout>

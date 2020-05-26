@@ -32,7 +32,7 @@ const Nav = () => {
 	const toggleNav = () => setVisible(!visible)
 	return (
 		<nav className="flex relative justify-between items-center z-10 w-full">
-			<div className="w-56">
+			<div className="w-56 mt-4">
 				<img src={logoImage} alt="Logo" />
 			</div>
 			<div className="hidden flex-row items-center sm:hidden md:flex">

@@ -13,7 +13,7 @@ const Jumbotron = ({image, children, overlay}) => (
 			<img
 				src={logoImage}
 				alt="Logo"
-				className="w-56 md:w-1/2"
+				className="w-40 md:w-1/2"
 			/>
 		</div>
 		{children}

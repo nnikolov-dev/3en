@@ -29,7 +29,7 @@ const Nav = () => {
 	const [visible, setVisible] = useState(false)
 	const toggleNav = () => setVisible(!visible)
 	return (
-		<nav className="flex relative justify-end md:justify-center items-center z-10 w-full pt-6">
+		<nav className="flex relative justify-end md:justify-center items-center z-10 w-full pt-8">
 			<div className="hidden flex-row items-center sm:hidden md:flex">
 				<NavItem address="/">Home</NavItem>
 				<NavItem address="/about">About</NavItem>
@@ -49,7 +49,7 @@ const Nav = () => {
 				<div className="mb-5"><NavItem address="/services">Services</NavItem></div>
 				<div className="mb-5"><Link to="/#contact"><Button white>Contact</Button></Link></div>
 			</div>
-			<div className={`sm:block md:hidden z-50 w-6 h-6 cursor-pointer right-8 transform translate-x-1/2 ${visible ? 'fixed' : 'block'}`} onClick={toggleNav}>
+			<div className="sm:block md:hidden z-50 w-6 h-6 cursor-pointer right-8 transform translate-x-1/2" onClick={toggleNav}>
 				<div className="w-full h-px bg-white" />
 				<div className="w-full h-px my-1 bg-white" />
 				<div className="w-full h-px bg-white" />

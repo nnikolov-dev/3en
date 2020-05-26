@@ -1,20 +1,30 @@
 import React from 'react'
+import Button from '../Button'
 
 const Contact = () => (
-	<form>
-		<div className="flex space-x-5 mt-3">
-			<input type="text" placeholder="Your Name" className="border p-2 w-1/2" />
-			<input type="tel" placeholder="Your Number" className="border p-2 w-1/2" />
+	<div className="flex flex-col md:flex-row">
+		<div className="w-full md:w-1/2 bg-gray-100 p-8">
+			<form>
+				<div className="flex md:space-x-5 flex-col md:flex-row">
+					<input type="text" placeholder="Your Name" className="border p-2 w-full md:w-1/2 focus:border-secondary" />
+					<input type="tel" placeholder="Your Number" className="border p-2 w-full md:w-1/2 mt-3 md:mt-0 focus:border-secondary" />
+				</div>
+				<input type="email" placeholder="Your Email" className="border p-2 w-full mt-3 focus:border-secondary" />
+				<textarea cols="10" rows="3" placeholder="Tell us about your legal issue" className="border p-2 mt-3 w-full focus:border-secondary" />
+				<div className="flex items-baseline space-x-2 my-2">
+					<input type="checkbox" className="inline-block focus:border-secondary" />
+					<p className="text-gray-600 text-sm">I consent to having this website store my submitted information so they can respond to my inquiry.</p>
+				</div>
+				<Button color="primary" full>Submit</Button>
+			</form>
 		</div>
-		<input type="email" placeholder="Your Email" className="border p-2 w-full mt-3" />
-		<textarea cols="10" rows="3" placeholder="Tell us about desired property" className="border p-2 mt-3 w-full" />
-		<p className="font-bold text-sm mt-3">GDPR Agreement *</p>
-		<div className="flex items-baseline space-x-2 mt-2">
-			<input type="checkbox" className="inline-block" />
-			<p className="text-gray-600 text-sm">I consent to having this website store my submitted information so they can respond to my inquiry.</p>
+		<div className="w-full md:w-1/2 md:pl-8">
+			<h1 className="text-3xl font-title">Have a Question?</h1>
+			<h2 className="text-xl font-title">We are one short email call away, so contact us now so we can help you with your legal issues today</h2>
+			<h1 className="text-3xl font-title mt-8">Prefer a Call?</h1>
+			<Button color="primary">Call us now</Button>
 		</div>
-		<input type="submit" value="Submit" className="w-full mt-6 bg-blue-600 hover:bg-blue-500 text-white font-semibold p-3" />
-	</form>
+	</div>
 )
 
 export default Contact

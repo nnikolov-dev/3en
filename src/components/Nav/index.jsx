@@ -1,9 +1,7 @@
 import React, {useState} from 'react'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import {Link} from 'gatsby'
+import {AnchorLink} from 'gatsby-plugin-anchor-links'
 import Button from '../Button'
-import tailwindConfig from '../../../tailwind.config'
-
-import logoImage from '../../assets/images/logo.svg'
 
 const NavItem = ({children, title, address}) => (
 	<div className="relative mx-8 text-sm text-center font-title font-bold uppercase">
@@ -23,7 +21,7 @@ const NavItem = ({children, title, address}) => (
 					</div>
 				</div>
 			)
-			: <AniLink to={address} cover direction="bottom" bg={tailwindConfig.theme.extend.colors.primary} className="pb-1 border-b-2 text-white border-transparent hover:border-white hover:border-opacity-25 transition ease-in-out duration-200" activeClassName="border-white">{children}</AniLink>}
+			: <Link to={address} className="pb-1 border-b-2 text-white border-transparent hover:border-white hover:border-opacity-25 transition ease-in-out duration-200" activeClassName="border-white">{children}</Link>}
 	</div>
 )
 
@@ -31,28 +29,25 @@ const Nav = () => {
 	const [visible, setVisible] = useState(false)
 	const toggleNav = () => setVisible(!visible)
 	return (
-		<nav className="flex relative justify-between items-center z-10 w-full">
-			<div className="w-56 mt-4">
-				<img src={logoImage} alt="Logo" />
-			</div>
+		<nav className="flex relative justify-end md:justify-center items-center z-10 w-full pt-6">
 			<div className="hidden flex-row items-center sm:hidden md:flex">
 				<NavItem address="/">Home</NavItem>
 				<NavItem address="/about">About</NavItem>
 				<NavItem address="/about#team">The Team</NavItem>
 				<NavItem address="/services" title="Services">
-					<AniLink to="/services#1">Criminal Law</AniLink>
-					<AniLink to="/services#1">Matriomonial Law</AniLink>
-					<AniLink to="/services#1">Motoring Offenses</AniLink>
-					<AniLink to="/services#1">Other</AniLink>
+					<Link to="/services#1">Criminal Law</Link>
+					<Link to="/services#1">Matriomonial Law</Link>
+					<Link to="/services#1">Motoring Offenses</Link>
+					<Link to="/services#1">Other</Link>
 				</NavItem>
-				<Button white>Contact</Button>
+				<AnchorLink to="/#contact"><Button white>Contact</Button></AnchorLink>
 			</div>
 			<div className={`transform p-12 flex flex-col items-center z-50 fixed w-full h-full bg-primary inset-0 transition ease-in-out duration-200 md:hidden ${visible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
 				<div className="mb-5"><NavItem address="/">Home</NavItem></div>
 				<div className="mb-5"><NavItem address="/about">About</NavItem></div>
 				<div className="mb-5"><NavItem address="/person">The Team</NavItem></div>
 				<div className="mb-5"><NavItem address="/services">Services</NavItem></div>
-				<div className="mb-5"><Button white>Contact</Button></div>
+				<div className="mb-5"><Link to="/#contact"><Button white>Contact</Button></Link></div>
 			</div>
 			<div className={`sm:block md:hidden z-50 w-6 h-6 cursor-pointer right-8 transform translate-x-1/2 ${visible ? 'fixed' : 'block'}`} onClick={toggleNav}>
 				<div className="w-full h-px bg-white" />

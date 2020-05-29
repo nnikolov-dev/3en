@@ -50,9 +50,9 @@ const Nav = () => {
 				<div className="mb-5"><Link to="/#contact"><Button white>Contact</Button></Link></div>
 			</div>
 			<div className="sm:block md:hidden z-50 w-6 h-6 cursor-pointer right-8 transform translate-x-1/2" onClick={toggleNav}>
-				<div className="w-full h-px bg-white" />
-				<div className="w-full h-px my-1 bg-white" />
-				<div className="w-full h-px bg-white" />
+				<div className={`w-full h-px bg-white transition duration-150 origin-center transform ${visible ? 'rotate-45' : 'rotate-0'}`} />
+				<div className={`w-full h-px my-1 bg-white transition duration-150 ${visible ? 'invisible' : 'visible'}`} />
+				<div className={`w-full h-px bg-white transition duration-150 origin-top-left transform ${visible ? '-rotate-45 -translate-y-px -translate-x-px' : 'rotate-0'}`} />
 			</div>
 		</nav>
 	)

@@ -4,10 +4,11 @@ import Slider from 'react-slick'
 import Nav from '../components/Nav'
 import Layout from '../components/Layout'
 import Jumbotron from '../components/Jumbotron'
-import Button from '../components/Button'
 import Footer from '../components/Footer'
-import Card from '../components/Card'
 import Contact from '../components/Contact'
+
+import logoImage from '../assets/images/logo.svg'
+import jumbotronImage from '../assets/images/stock-2.jpeg'
 
 const Index = () => (
 	<>
@@ -16,10 +17,18 @@ const Index = () => (
 		</Helmet>
 
 		<div className="flex flex-col min-h-screen">
-			<div className="flex-1">
+			<div className="flex-1 mt-20 md:mt-0">
 				<Jumbotron
 					overlay
+					image={jumbotronImage}
 				>
+					<div className="hidden md:flex absolute w-full h-full items-center justify-center">
+						<img
+							src={logoImage}
+							alt="Logo"
+							className="w-1/2"
+						/>
+					</div>
 					<Layout>
 						<Nav />
 						{/* <div className="sm:max-w-sm md:max-w-md lg:max-w-lg py-8">

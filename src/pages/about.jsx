@@ -4,10 +4,10 @@ import Nav from '../components/Nav'
 import Layout from '../components/Layout'
 import Jumbotron from '../components/Jumbotron'
 import Team from '../components/Team'
-import Button from '../components/Button'
 import Footer from '../components/Footer'
 
-import aboutImage from '../assets/images/about.jpg'
+import logoImage from '../assets/images/logo.svg'
+import jumbotronImage from '../assets/images/stock-1.jpeg'
 
 const About = () => (
 	<>
@@ -16,18 +16,19 @@ const About = () => (
 		</Helmet>
 
 		<div className="flex flex-col min-h-screen">
-			<div className="flex-1">
+			<div className="flex-1 mt-20 md:mt-0">
 				<Jumbotron
 					overlay
-					image={aboutImage}
-					video={null}
+					image={jumbotronImage}
 				>
-					<Layout>
-						<Nav />
-						<div className="sm:max-w-sm md:max-w-md lg:max-w-lg py-8">
+					<div className="absolute hidden md:flex justify-center items-center h-full w-full">
+						<div className="sm:max-w-sm md:max-w-md lg:max-w-lg">
 							<h1 className="font-heading text-white font-bold text-3xl md:text-6xl">About Us </h1>
 							<h2 className="font-heading text-white text-lg md:text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro veritatis quam dolorum, assumenda asperiores inventore facilis sapiente!</h2>
 						</div>
+					</div>
+					<Layout>
+						<Nav />
 					</Layout>
 				</Jumbotron>
 				<div className="flex justify-center items-center text-accent my-16 flex-wrap md:flex-nowrap">

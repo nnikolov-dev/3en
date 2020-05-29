@@ -41,7 +41,7 @@ module.exports = {
 			},
 		},
 	},
-	purge: ['./src/**/*.js', './src/**/*.jsx', './src/**/*.ts', './src/**/*.tsx'],
+	// purge: ['./src/**/*.js', './src/**/*.jsx', './src/**/*.ts', './src/**/*.tsx'],
 	variants: {
 		backgroundColor: ['responsive', 'hover', 'focus', 'group-hover', 'odd'],
 		textColor: ['responsive', 'hover', 'focus', 'group-hover', 'odd'],

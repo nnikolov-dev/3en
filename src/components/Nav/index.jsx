@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import cx from 'classnames'
 import {Link} from 'gatsby'
 import {AnchorLink} from 'gatsby-plugin-anchor-links'
 import Button from '../Button'
@@ -28,6 +29,21 @@ const NavItem = ({children, title, address}) => (
 const Nav = () => {
 	const [visible, setVisible] = useState(false)
 	const toggleNav = () => setVisible(!visible)
+
+	const topBarClass = cx(
+		'w-full h-px bg-white transition duration-150 origin-center transform',
+		{
+			'translate-y-1': visible,
+		},
+	)
+
+	const bottomBarClass = cx(
+		'w-full h-px bg-white transition duration-150 origin-center transform',
+		{
+			'-translate-y-1': visible,
+		},
+	)
+
 	return (
 		<nav className="flex relative justify-end md:justify-center items-center z-50 w-full pt-8">
 			<div className="hidden flex-row items-center sm:hidden md:flex">
@@ -50,9 +66,9 @@ const Nav = () => {
 				<div className="mb-5"><Link to="/#contact"><Button white>Contact</Button></Link></div>
 			</div>
 			<div className="sm:block md:hidden z-50 w-6 h-6 cursor-pointer right-8 transform translate-x-1/2" onClick={toggleNav}>
-				<div className={`w-full h-px bg-white transition duration-150 origin-center transform ${visible ? 'rotate-45' : 'rotate-0'}`} />
-				<div className={`w-full h-px my-1 bg-white transition duration-150 ${visible ? 'invisible' : 'visible'}`} />
-				<div className={`w-full h-px bg-white transition duration-150 origin-top-left transform ${visible ? '-rotate-45 -translate-y-px -translate-x-px' : 'rotate-0'}`} />
+				<div className={topBarClass} />
+				<div className="w-full h-px my-1 bg-white transition duration-150" />
+				<div className={bottomBarClass} />
 			</div>
 		</nav>
 	)

@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import {window} from 'browser-monads'
+import cx from 'classnames'
 import Card from '../Card'
 import Button from '../Button'
-
-import serviceImage from '../../assets/images/stock-3.jpeg'
 
 const services = [
 	{
@@ -28,7 +27,6 @@ const services = [
 	},
 ]
 
-
 const Catalog = () => {
 	const [active, setActive] = useState(false)
 	const [content, setContent] = useState({title: '', description: ''})
@@ -42,9 +40,17 @@ const Catalog = () => {
 		window.addEventListener('click', () => setActive(false))
 	})
 
+	const modalClass = cx(
+		'fixed w-screen bg-primary left-0 bottom-0 z-10 transition ease-in-out duration-200 transform text-white p-8',
+		{
+			'translate-y-0 opacity-100': active,
+			'translate-y-full opacity-0': !active,
+		},
+	)
+
 	return (
 		<>
-			<div className={`fixed w-screen bg-primary left-0 bottom-0 z-10 transition ease-in-out duration-200 transform text-white p-8 ${active ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
+			<div className={modalClass}>
 				<div className="flex flex-col md:flex-row md:items-center">
 					<div className="md:w-1/3 pr-3 md:border-secondary md:border-r-2">
 						<h1 className="text-2xl font-heading">{content.title}</h1>

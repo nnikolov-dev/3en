@@ -8,9 +8,9 @@ const NavItem = ({children, title, address}) => (
 	<div className="relative mx-8 text-sm text-center font-title font-bold uppercase">
 		{Array.isArray(children)
 			? (
-				<div className="group relative">
+				<div className="group relative z-50">
 					<Link to={address} className="pb-1 border-b-2 text-white border-transparent hover:border-white hover:border-opacity-25 transition ease-in-out duration-200" activeClassName="border-white">{title}</Link>
-					<div className="absolute bottom-full right-0 py-4 invisible group-hover:visible font-title font-normal normal-case w-96 transition ease-in-out duration-200 transform -translate-y-1 group-hover:translate-y-0">
+					<div className="absolute bottom-full right-0 py-4 invisible group-hover:visible font-title font-normal normal-case w-96 transition ease-in-out duration-200 transform -translate-y-1 group-hover:translate-y-0 z-50">
 						<div className="bg-white text-left border-b-4 border-white border-t-4">
 							<svg className="block fill-current text-white w-4 h-4 absolute right-0 top-0 mr-3 mt-1 z-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /></svg>
 							<ul className="flex flex-wrap">
@@ -50,12 +50,7 @@ const Nav = () => {
 				<NavItem address="/">Home</NavItem>
 				<NavItem address="/about">About</NavItem>
 				<NavItem address="/team">The Team</NavItem>
-				<NavItem address="/services" title="Services">
-					<Link to="/services#1">Criminal Law</Link>
-					<Link to="/services#1">Matriomonial Law</Link>
-					<Link to="/services#1">Motoring Offenses</Link>
-					<Link to="/services#1">Other</Link>
-				</NavItem>
+				<NavItem address="/services">Services</NavItem>
 				<AnchorLink to="/#contact"><Button white>Contact</Button></AnchorLink>
 			</div>
 			<div className={`transform p-12 flex flex-col items-center z-50 fixed w-full h-full bg-primary inset-0 transition ease-in-out duration-200 md:hidden ${visible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>

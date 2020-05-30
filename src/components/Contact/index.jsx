@@ -4,13 +4,14 @@ import Button from '../Button'
 const Contact = () => (
 	<div className="flex flex-col md:flex-row">
 		<div className="w-full md:w-1/2 bg-gray-100 p-8">
-			<form>
+			<form method="post" netlify-honeypot="bot-field" data-netlify="true">
+				<input type="hidden" name="bot-field" />
 				<div className="flex md:space-x-5 flex-col md:flex-row">
-					<input type="text" placeholder="Your Name" className="border p-2 w-full md:w-1/2 focus:border-secondary" />
-					<input type="tel" placeholder="Your Number" className="border p-2 w-full md:w-1/2 mt-3 md:mt-0 focus:border-secondary" />
+					<input type="text" name="name" placeholder="Your Name" className="border p-2 w-full md:w-1/2 focus:border-secondary" />
+					<input type="tel" name="number" placeholder="Your Number" className="border p-2 w-full md:w-1/2 mt-3 md:mt-0 focus:border-secondary" />
 				</div>
-				<input type="email" placeholder="Your Email" className="border p-2 w-full mt-3 focus:border-secondary" />
-				<textarea cols="10" rows="3" placeholder="Tell us about your legal issue" className="border p-2 mt-3 w-full focus:border-secondary" />
+				<input type="email" name="email" placeholder="Your Email" className="border p-2 w-full mt-3 focus:border-secondary" />
+				<textarea cols="10" name="message" rows="3" placeholder="Tell us about your legal issue" className="border p-2 mt-3 w-full focus:border-secondary" />
 				<div className="flex items-baseline space-x-2 my-2">
 					<input type="checkbox" className="inline-block focus:border-secondary" />
 					<p className="text-gray-600 text-sm">I consent to having this website store my submitted information so they can respond to my inquiry.</p>

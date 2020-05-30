@@ -13,6 +13,7 @@ const Contact = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault()
 		const form = e.target
+		console.log(form.getAttribute('name'))
 		fetch('/', {
 			method: 'POST',
 			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
@@ -36,14 +37,16 @@ const Contact = () => {
 	return (
 		<div className="flex flex-col md:flex-row">
 			<form
+				name="contact"
 				method="post"
-				netlify-honeypot="bot-field"
+				action="/thanks/"
 				data-netlify="true"
+				data-netlify-honeypot="bot-field"
 				className={formClass}
 				onSubmit={handleSubmit}
 			>
-				<input type="hidden" name="bot-field" />
-				<input type="hidden" name="form-name" value="Contact" />
+				<input type="hidden" name="form-name" value="contact" />
+				<input hidden name="bot-field" onChange={handleChange} />
 				<div className="flex md:space-x-5 flex-col md:flex-row">
 					<input
 						type="text"

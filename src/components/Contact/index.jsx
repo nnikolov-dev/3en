@@ -16,7 +16,7 @@ const Contact = () => (
 					<input type="checkbox" className="inline-block focus:border-secondary" />
 					<p className="text-gray-600 text-sm">I consent to having this website store my submitted information so they can respond to my inquiry.</p>
 				</div>
-				<Button color="primary" full>Submit</Button>
+				<Button color="primary" full submit>Submit</Button>
 			</form>
 		</div>
 		<div className="w-full md:w-1/2 md:pl-8">

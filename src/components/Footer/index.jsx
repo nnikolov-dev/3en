@@ -10,8 +10,8 @@ const Footer = () => (
 			<div className="flex justify-center">
 				<img src={logoImage} alt="Logo" className="max-w-sm" />
 			</div>
-			<div className="flex justify-between flex-wrap my-8 w-full">
-				<div className="pr-8 py-4">
+			<div className="flex flex-col md:flex-row justify-center md:justify-between text-center md:text-left my-16 w-full">
+				<div className="mb-4">
 					<h1 className="uppercase text-xl">Working Hours</h1>
 					<ul>
 						<li>
@@ -37,7 +37,7 @@ const Footer = () => (
 						</li>
 					</ul>
 				</div>
-				<div className="pr-8 py-4">
+				<div className="mb-4">
 					<h1 className="uppercase text-xl">Services</h1>
 					<ul>
 						<li>
@@ -54,7 +54,7 @@ const Footer = () => (
 						</li>
 					</ul>
 				</div>
-				<div className="pr-10 py-4">
+				<div className="mb-4">
 					<h1 className="uppercase text-xl">Site Map</h1>
 					<ul>
 						<li><Link to="/">Home</Link></li>
@@ -63,7 +63,7 @@ const Footer = () => (
 						<li><Link to="/">Services</Link></li>
 					</ul>
 				</div>
-				<div className="py-4">
+				<div className="mb-4">
 					<h1 className="uppercase text-xl">Our Office</h1>
 					<ul>
 						<li>12 John Doe</li>

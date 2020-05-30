@@ -1,7 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import Slider from 'react-slick'
-import Nav from '../components/Nav'
 import Layout from '../components/Layout'
 import Jumbotron from '../components/Jumbotron'
 import Footer from '../components/Footer'
@@ -21,6 +20,7 @@ const Index = () => (
 				<Jumbotron
 					overlay
 					image={jumbotronImage}
+					full
 				>
 					<div className="hidden md:flex absolute w-full h-full items-center justify-center">
 						<img
@@ -29,13 +29,6 @@ const Index = () => (
 							className="w-1/2"
 						/>
 					</div>
-					<Layout>
-						<Nav />
-						{/* <div className="sm:max-w-sm md:max-w-md lg:max-w-lg py-8">
-							<h1 className="font-heading text-white font-bold text-3xl md:text-6xl">Your Homepage</h1>
-							<h2 className="font-heading text-white text-lg md:text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro veritatis quam dolorum, assumenda asperiores inventore facilis sapiente!</h2>
-						</div> */}
-					</Layout>
 				</Jumbotron>
 				<Layout>
 					<div id="contact" className="md:py-16 py-4 text-center md:text-left">

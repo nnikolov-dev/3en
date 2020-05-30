@@ -1,19 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Card = ({children, color}) => (
-	<div className={`relative overflow-hidden text-white py-20 transition duration-150 cursor-pointer border-t-4 border-b-4 border-secondary bg-${color} group`}>
-		<div className="absolute w-full h-full inset-0 border border-transparent bg-secondary transform -translate-y-full group-hover:translate-y-0 ease-in-out duration-150" />
-		{children}
+const Card = ({image, children, onClick}) => (
+	<div className="group p-2 bg-lite cursor-pointer" onClick={onClick}>
+		<img src={image} className="h-32 object-cover w-full" alt="Law" />
+		<h1 className="text-xl font-light text-center py-2 bg-shade text-white group-hover:bg-primary">{children}</h1>
 	</div>
 )
 
 Card.propTypes = {
-	color: PropTypes.string,
+	image: PropTypes.string,
+	children: PropTypes.string,
+	onClick: PropTypes.func,
 }
 
 Card.defaultProps = {
-	color: 'shade',
+	image: '',
+	children: '',
+	onClick: null,
 }
 
 export default Card

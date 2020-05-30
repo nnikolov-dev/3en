@@ -39,6 +39,9 @@ module.exports = {
 				shade: '#1F272B',
 				lite: '#EAE8E1',
 			},
+			minHeight: {
+				half: '30vh',
+			},
 		},
 	},
 	// purge: ['./src/**/*.js', './src/**/*.jsx', './src/**/*.ts', './src/**/*.tsx'],

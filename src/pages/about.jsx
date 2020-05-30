@@ -18,12 +18,14 @@ const About = () => (
 					overlay
 					image={jumbotronImage}
 				/>
-				<div className="flex justify-center text-center my-16">
-					<div className="sm:max-w-sm md:max-w-md lg:max-w-lg">
-						<h1 className="font-heading text-shade font-bold text-3xl md:text-4xl">About Us</h1>
-						<h2 className="font-heading text-shade text-lg md:text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro veritatis quam dolorum, assumenda asperiores inventore facilis sapiente!</h2>
+				<Layout>
+					<div className="flex justify-center text-center mb-16 md:mt-16">
+						<div className="sm:max-w-sm md:max-w-md lg:max-w-lg">
+							<h1 className="font-heading text-shade font-bold text-3xl md:text-4xl">About Us</h1>
+							<h2 className="font-heading text-shade text-lg md:text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro veritatis quam dolorum, assumenda asperiores inventore facilis sapiente!</h2>
+						</div>
 					</div>
-				</div>
+				</Layout>
 				<div className="flex justify-center items-center text-accent my-16 flex-wrap md:flex-nowrap">
 					<span className="material-icons text-6xl mx-4">stars</span>
 					<span className="material-icons text-6xl mx-4">stars</span>

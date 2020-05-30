@@ -19,14 +19,14 @@ const Team = () => (
 					overlay
 					image={jumbotronImage}
 				/>
-				<div className="flex justify-center text-center my-16">
-					<div className="sm:max-w-sm md:max-w-md lg:max-w-lg">
-						<h1 className="font-heading text-shade font-bold text-3xl md:text-4xl">Our Team</h1>
-						<h2 className="font-heading text-shade text-lg md:text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro veritatis quam dolorum, assumenda asperiores inventore facilis sapiente!</h2>
-					</div>
-				</div>
 				<Layout>
-					<h1 className="text-center font-heading text-4xl my-16 mb-8">Meet the Barristers</h1>
+					<div className="flex justify-center text-center mb-8 md:mt-16">
+						<div className="sm:max-w-sm md:max-w-md lg:max-w-lg">
+							<h1 className="font-heading text-shade font-bold text-3xl md:text-4xl">Our Team</h1>
+							<h2 className="font-heading text-shade text-lg md:text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro veritatis quam dolorum, assumenda asperiores inventore facilis sapiente!</h2>
+						</div>
+					</div>
+					<h1 className="text-center font-heading text-4xl md:my-16 mb-8">Meet the Barristers</h1>
 					<div className="mb-6 flex justify-center md:justify-end">
 						<div className="relative md:w-1/4">
 							<select className="block appearance-none w-full bg-lite border border-lite text-gray-700 py-3 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-primary" id="grid-state">

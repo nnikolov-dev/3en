@@ -20,7 +20,7 @@ const Services = () => (
 					image={jumbotronImage}
 				/>
 				<Layout>
-					<h1 className="text-center font-heading font-bold text-3xl md:text-4xl my-16 mb-8">Our Services</h1>
+					<h1 className="text-center font-heading font-bold text-3xl md:text-4xl mb-2 md:mt-16">Our Services</h1>
 					<p className="text-center mb-16">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur nesciunt, deleniti iure minus, doloribus blanditiis dolorem autem quaerat hic accusantium consectetur recusandae. Pariatur recusandae maxime aliquam quis modi, voluptatum distinctio quae sint nulla sed, dicta quia, quaerat placeat corrupti rerum. Sequi deserunt odit commodi harum eum laborum illum in minus repellat veniam soluta, distinctio facere fugit amet repudiandae culpa molestiae reiciendis quisquam nobis perferendis veritatis, voluptates corrupti praesentium? Doloribus voluptatibus voluptatem doloremque architecto aliquid velit tempore nulla harum consequatur natus. Atque sit, fuga facere veniam aspernatur explicabo libero, molestias voluptate animi voluptates illum repellat ipsum reprehenderit odit autem? Eos!</p>
 					<div className="my-8">
 						<Catalog />

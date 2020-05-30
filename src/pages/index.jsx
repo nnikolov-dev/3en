@@ -44,7 +44,6 @@ const Index = () => (
 									<p className="mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, ad aspernatur. Distinctio aliquid velit deleniti ex veritatis magnam temporibus architecto optio beatae consectetur! Deserunt itaque accusamus laboriosam nam illo quis.</p>
 								</div>
 							))}
-
 						</Slider>
 					</div>
 				</section>

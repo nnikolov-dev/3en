@@ -35,7 +35,7 @@ const Contact = () => {
 	)
 
 	return (
-		<div className="flex flex-col md:flex-row">
+		<div className="flex flex-col-reverse md:flex-row">
 			<form
 				name="contact"
 				method="post"
@@ -105,7 +105,7 @@ const Contact = () => {
 					{complete ? 'Your query has been submitted!' : 'Submit'}
 				</Button>
 			</form>
-			<div className="w-full md:w-1/2 md:pl-8">
+			<div className="w-full md:w-1/2 md:pl-8 mb-8">
 				<h1 className="text-3xl font-title">Have a Question?</h1>
 				<h2 className="text-xl font-title">We are one short email call away, so contact us now so we can help you with your legal issues today</h2>
 				<h1 className="text-3xl font-title mt-8">Prefer a Call?</h1>

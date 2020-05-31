@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {window} from 'browser-monads'
 import cx from 'classnames'
+import {Link} from 'gatsby'
 import Card from '../Card'
 import Button from '../Button'
 
@@ -58,14 +59,14 @@ const Catalog = () => {
 					</div>
 					<div className="md:pl-10 mt-4 md:mt-0">
 						<p className="text-lg mb-2">Have a question?</p>
-						<Button white>Contact us</Button>
+						<Link to="/#contact"><Button white>Contact us</Button></Link>
 					</div>
 				</div>
 			</div>
 			<div className="flex">
 				<div className="w-full flex flex-wrap justify-center">
 					{services.map(({title, image, description}) => (
-						<div className="w-full md:w-1/4 pr-2 pb-2">
+						<div className="w-full md:w-1/4 pr-2 pb-2" key={`service-${title}`}>
 							<Card image={image} onClick={handleClick(title, description)}>{title}</Card>
 						</div>
 					))}

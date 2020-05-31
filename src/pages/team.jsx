@@ -41,7 +41,12 @@ const Team = () => (
 					</div>
 					<ul className="flex flex-wrap md:text-xl text-center">
 						{[...Array(20).fill().map((_, i) => (
-							<li className="w-full md:w-1/4 p-4 md:p-8 border-b-2 hover:bg-lite font-light transition duration-300"><Link to="/person">John Doe {i}</Link></li>
+							<li
+								key={`team-${i}`}
+								className="w-full md:w-1/4 p-4 md:p-8 border-b-2 hover:bg-lite font-light transition duration-300"
+							>
+								<Link to="/person">John Doe {i}</Link>
+							</li>
 						))]}
 					</ul>
 				</Layout>

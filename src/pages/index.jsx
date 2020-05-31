@@ -31,7 +31,7 @@ const Index = () => (
 					</div>
 				</Jumbotron>
 				<Layout>
-					<div id="contact" className="md:my-16 text-center md:text-left">
+					<div id="contact" className="pb-8 md:py-16 text-center md:text-left">
 						<Contact />
 					</div>
 				</Layout>
@@ -39,7 +39,7 @@ const Index = () => (
 					<div className="max-w-xl mx-auto px-8">
 						<Slider dots infinite autoplay arrows={false}>
 							{[...Array(5)].fill().map((_, i) => (
-								<div className="item w-full">
+								<div className="item w-full" key={`slider-${i}`}>
 									<h1 className="font-title font-bold text-4xl">Company {i}</h1>
 									<p className="mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, ad aspernatur. Distinctio aliquid velit deleniti ex veritatis magnam temporibus architecto optio beatae consectetur! Deserunt itaque accusamus laboriosam nam illo quis.</p>
 								</div>

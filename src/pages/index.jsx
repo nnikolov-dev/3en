@@ -31,7 +31,7 @@ const Index = () => (
 					</div>
 				</Jumbotron>
 				<Layout>
-					<div id="contact" className="md:py-16 py-4 text-center md:text-left">
+					<div id="contact" className="md:my-16 text-center md:text-left">
 						<Contact />
 					</div>
 				</Layout>

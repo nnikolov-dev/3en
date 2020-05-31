@@ -20,9 +20,31 @@ module.exports = {
 			// 	precachePages: ['/about/', '/projects/*'],
 			// },
 		},
+		'gatsby-plugin-postcss',
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-sass',
+		'gatsby-plugin-transition-link',
+		'gatsby-plugin-anchor-links',
+		{
+			resolve: 'gatsby-plugin-google-fonts',
+			options: {
+				fonts: [
+					'material icons',
+					'roboto:300,400,500,700',
+					'montserrat:400.400i,700,700i',
+					'open sans:400,400i,700,700i',
+					'lora:400,700',
+				],
+			},
+		},
 		// {
+		// 	resolve: 'gatsby-plugin-purgecss',
+		// 	options: {
+		// 		printRejected: false,
+		// 		develop: true,
+		// 		tailwind: true,
+		// 	},
+		// },
 		//   resolve: `@kentico/gatsby-source-kontent`,
 		//   options: {
 		//     deliveryClientConfig: {

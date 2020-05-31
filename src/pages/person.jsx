@@ -1,106 +1,74 @@
 import React from 'react'
-import Bar from '../components/Bar'
-import Header from '../components/Header'
-import Nav from '../components/Nav'
+import Helmet from 'react-helmet'
+import Slider from 'react-slick'
 import Layout from '../components/Layout'
-import Container from '../components/Container'
-import '../assets/styles/style.scss'
+import Button from '../components/Button'
 import Jumbotron from '../components/Jumbotron'
 import Footer from '../components/Footer'
-import Title from '../components/Title'
-import Card from '../components/Card'
-import Carousel from '../components/Carousel'
-import Helmet from 'react-helmet'
 
-import logoImage from '../assets/images/logo.svg'
 
-const navItems = [
-	{
-		title: 'Home',
-		address: '/',
-		active: false,
-	},
-	{
-		title: 'About',
-		address: '/about',
-		active: false,
-	},
-	{
-		title: 'The Team',
-		address: '/person',
-		active: true,
-	},
-	{
-		title: 'Services',
-		address: '#',
-		active: false,
-	},
-	{
-		title: 'Contact',
-		address: '#',
-		active: false,
-	},
-]
+import jumbotronImage from '../assets/images/stock-7.jpeg'
 
 const Person = () => (
 	<>
 		<Helmet>
-			<title>John Doe :: Agency</title>
+			<title>John Doe</title>
 		</Helmet>
-		<Container>
-			<div className="container">
-				<Bar left="info@testemail.com" right="call us now 020 341 123123" />
-				<Header>
-					<img src={logoImage} alt="Logo" />
-				</Header>
-				<Nav items={navItems} />
-				<section className="person">
+
+		<div className="flex flex-col min-h-screen text-shade">
+			<div className="flex-1 mt-20 md:mt-0">
+				<Jumbotron
+					overlay
+					image={jumbotronImage}
+				/>
+				<div className="relative md:-mt-16 md:z-10">
 					<Layout>
-						<Jumbotron justifyContent="flex-start" alignItems="flex-end" image="https://images.unsplash.com/photo-1489410342162-b4b300a0bb15?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
-							<div className="jumbotron">
-								<div className="person-name">
-									<Title>John Doe</Title>
+						<div className="flex flex-wrap mt-2">
+							<div className="w-full md:w-4/12 bg-lite p-1 border">
+								<img
+									src="https://images.unsplash.com/photo-1551989745-347c28b620e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+									className="min-w-full object-cover"
+								/>
+								<h1 className="py-2 mb-4 text-xl bg-primary text-white text-center">John Doe</h1>
+								<div className="m-2 py-2 flex border-b-2 border-gray-400">
+									<span className="w-full">
+										Year called
+									</span>
+									<span className="text-right font-light w-full">
+										2020
+									</span>
 								</div>
-								<div className="person-title">
-									<Title>Barrister</Title>
+								<div className="m-2 py-2 flex border-b-2 border-gray-400">
+									<span className="w-full">
+										Areas of expertise
+									</span>
+									<span className="text-right font-light w-full">
+										Criminal, Motoring
+									</span>
+								</div>
+								<div className="my-4 p-2">
+									<Button full color="shade">Contact</Button>
 								</div>
 							</div>
-						</Jumbotron>
-					</Layout>
-					<Layout padded>
-						<div className="content">
-							<div className="flex">
-								<div className="left">
-									<div className="carousel">
-										<Carousel>
-											<Card>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel voluptas nisi nobis corporis praesentium, voluptatibus, molestiae sint dolorum repudiandae asperiores perferendis perspiciatis ullam adipisci ex sapiente excepturi expedita? Temporibus, consequatur!</Card>
-											<Card>1Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel voluptas nisi nobis corporis praesentium, voluptatibus, molestiae sint dolorum repudiandae asperiores perferendis perspiciatis ullam adipisci ex sapiente excepturi expedita? Temporibus, consequatur!</Card>
-											<Card>2Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel voluptas nisi nobis corporis praesentium, voluptatibus, molestiae sint dolorum repudiandae asperiores perferendis perspiciatis ullam adipisci ex sapiente excepturi expedita? Temporibus, consequatur!</Card>
-										</Carousel>
-									</div>
-									<h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quos consectetur distinctio. Consectetur harum optio veritatis repudiandae corrupti quasi. Unde deleniti expedita autem at officiis sequi maxime minus odit molestiae.</h2>
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ratione tenetur vitae rerum accusantium iusto quod? Perspiciatis at, illo maiores neque ad porro laboriosam excepturi aliquam. Voluptas, dolor iusto temporibus facilis quas non, animi consectetur dicta alias nam unde omnis ex odit. Quam ab recusandae, alias, laudantium nesciunt quibusdam veniam accusamus saepe veritatis quo animi fugiat incidunt sunt culpa iure maxime fugit quidem suscipit ipsum laborum aut. Atque iure mollitia culpa fugiat voluptate! Dolor repudiandae fugit nobis illo ad unde dolorum nulla, tempore at quidem, blanditiis ut velit eaque ea quia debitis, illum suscipit nisi officiis minima veritatis repellat reprehenderit autem error? Ipsum natus esse sequi neque molestias officiis, nulla numquam qui pariatur error corporis vel ullam porro modi, sunt at nostrum. Nesciunt natus quas cumque autem reprehenderit voluptatibus id iure illo laborum. Provident assumenda consequuntur enim eveniet eum. Corrupti suscipit debitis excepturi ad error dicta exercitationem maxime assumenda consectetur, quae sunt earum labore voluptates iure tempore ipsum eum harum perspiciatis aliquid. Officia voluptates est, id deleniti fugiat dignissimos impedit minima ad assumenda nobis sapiente quae laborum labore, ea ab sed nam illum cum eos fugit reiciendis molestiae. Earum, consectetur. Id rem explicabo eum, doloremque quam officia veritatis nam harum?</p>
-								</div>
-								<div className="right">
-									<div className="info">
-										<div className="title">
-											At a Glance
+							<div className="w-full md:w-8/12 md:mt-16 md:px-8 py-8">
+								<Slider dots infinite autoplay arrows={false}>
+									{[...Array(5)].fill().map(() => (
+										<div className="item w-full">
+											<p className="mb-8 text-center text-lg font-heading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, ad aspernatur. Distinctio aliquid velit deleniti ex veritatis magnam temporibus architecto optio beatae consectetur! Deserunt itaque accusamus laboriosam nam illo quis.</p>
 										</div>
-										<div className="content">
-											Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, voluptatum quisquam blanditiis distinctio unde quas consectetur doloribus reiciendis dolorum nemo velit quia, asperiores iste corporis deleniti soluta expedita obcaecati ipsum?
-										</div>
-									</div>
-								</div>
+									))}
+								</Slider>
+								<h1 className="mt-16 font-heading text-shade font-bold text-3xl md:text-4xl">About John Doe</h1>
+								<p className="mt-2">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ducimus adipisci numquam quo blanditiis iste harum, aliquid omnis quam dolorum eaque quibusdam nulla temporibus. Rem, atque repudiandae! Unde odit velit quasi est facere asperiores a voluptas sint, aperiam corrupti totam labore vel illo eaque ea corporis. Aut ex possimus sapiente dolorum, quas veniam quod laudantium excepturi perspiciatis corporis quasi ipsum commodi, neque quos consectetur sunt quo. Dolor commodi debitis aliquam mollitia vero architecto, corporis quo soluta iure error illo saepe, eligendi molestias sit similique sequi et dolores blanditiis, dignissimos totam quaerat. Consectetur esse quae itaque velit eaque, perspiciatis obcaecati praesentium officiis, in sequi animi fuga dolores debitis delectus similique sunt expedita molestiae culpa repellat consequatur nisi? Repellat ex, inventore optio sit itaque quia est sapiente quibusdam molestiae commodi eos, beatae, aperiam sequi veritatis perferendis rerum quasi ut? Cumque quod voluptates saepe, ea totam, commodi amet provident, eius eaque accusantium maxime.
+								</p>
 							</div>
 						</div>
 					</Layout>
-				</section>
+				</div>
 			</div>
-			<Footer>
-				<span>Comapny Name<br />Company Address</span>
-				<div style={{width: '300px', height: '100px', background: 'white'}} />
-			</Footer>
-		</Container>
+			<Footer />
+		</div>
 	</>
 )
 

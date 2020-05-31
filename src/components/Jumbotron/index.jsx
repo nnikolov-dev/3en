@@ -1,28 +1,63 @@
 import React from 'react'
+import cx from 'classnames'
 import PropTypes from 'prop-types'
-import styles from './jumbotron.module.scss'
+import Layout from '../Layout'
+import Nav from '../Nav'
+import aerialImage from '../../assets/images/stock-1.jpeg'
+import logoImage from '../../assets/images/logo.svg'
 
-const Jumbotron = ({image, children, justifyContent, alignItems, dark}) => (
-	<div className={styles.Jumbotron} style={{backgroundImage: `url(${image})`, justifyContent, alignItems}}>
-		{dark && (<div className={styles.Dark} />)}
-		{children}
-	</div>
-)
+const Jumbotron = ({image, children, overlay, full}) => {
+	const headerClass = cx(
+		'fixed md:relative w-full left-0 top-0 min-h-auto bg-cover pb-2 md:pb-8 z-10 bg-none bg-primary',
+		{
+			'md:min-h-screen': full,
+			'md:min-h-half': !full,
+		},
+	)
+
+	const bgClass = cx(
+		'absolute w-full h-full bg-cover bg-center invisible md:visible',
+		{
+			'bg-fixed': full,
+		},
+	)
+
+	return (
+		<header
+			className={headerClass}
+		>
+			<div
+				style={{backgroundImage: `url(${image})`}}
+				className={bgClass}
+			/>
+			{overlay && (<div className="absolute w-full h-full bg-primary bg-opacity-75" />)}
+			<div className="md:hidden absolute w-full h-full flex items-center justify-center">
+				<img
+					src={logoImage}
+					alt="Logo"
+					className="w-32"
+				/>
+			</div>
+			<Layout>
+				<Nav />
+			</Layout>
+			{children}
+		</header>
+	)
+}
 
 Jumbotron.propTypes = {
 	image: PropTypes.string,
 	children: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.arrayOf(PropTypes.element)]),
-	justifyContent: PropTypes.string,
-	alignItems: PropTypes.string,
-	dark: PropTypes.bool,
+	overlay: PropTypes.bool,
+	full: PropTypes.bool,
 }
 
 Jumbotron.defaultProps = {
-	image: 'https://images.unsplash.com/photo-1583560306723-4e50a15636c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
+	image: aerialImage,
 	children: '',
-	justifyContent: 'center',
-	alignItems: 'center',
-	dark: false,
+	overlay: false,
+	full: false,
 }
 
 export default Jumbotron

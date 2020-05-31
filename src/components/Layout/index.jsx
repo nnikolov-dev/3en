@@ -1,21 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './layout.module.scss'
 
-const Layout = ({children, padded}) => (
-	<div className={padded ? styles.Padded : styles.Layout}>
+const Layout = ({children}) => (
+	<div className="relative mx-auto max-w-screen-xl px-8">
 		{children}
 	</div>
 )
 
 Layout.propTypes = {
 	children: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.arrayOf(PropTypes.element)]),
-	padded: PropTypes.bool,
 }
 
 Layout.defaultProps = {
 	children: '',
-	padded: false,
 }
 
 export default Layout

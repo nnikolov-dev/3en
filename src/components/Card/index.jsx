@@ -1,26 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './card.module.scss'
 
-const Card = ({children, image, title}) => (
-	<div className={styles.Card}>
-		{image && (
-			<div className={styles.Image}>
-				<img src={image} width="100" alt="Card" />
-				{title && <div className={styles.Title}>{title}</div>}
-			</div>
-		)}
-		<div className={styles.Content}>
-			{children}
-		</div>
+const Card = ({image, children, onClick}) => (
+	<div className="group p-2 bg-lite cursor-pointer" onClick={onClick}>
+		<img src={image} className="h-32 object-cover w-full" alt="Law" />
+		<h1 className="text-xl font-light text-center py-2 bg-shade text-white group-hover:bg-primary">{children}</h1>
 	</div>
 )
+
 Card.propTypes = {
-	children: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.arrayOf(PropTypes.element)]),
+	image: PropTypes.string,
+	children: PropTypes.string,
+	onClick: PropTypes.func,
 }
 
 Card.defaultProps = {
+	image: '',
 	children: '',
+	onClick: null,
 }
 
 export default Card

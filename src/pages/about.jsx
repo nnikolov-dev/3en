@@ -1,84 +1,45 @@
 import React from 'react'
-import Bar from '../components/Bar'
-import Header from '../components/Header'
-import Nav from '../components/Nav'
+import Helmet from 'react-helmet'
 import Layout from '../components/Layout'
-import Container from '../components/Container'
-import '../assets/styles/style.scss'
 import Jumbotron from '../components/Jumbotron'
 import Footer from '../components/Footer'
-import Title from '../components/Title'
-import Helmet from 'react-helmet'
 
-import logoImage from '../assets/images/logo.svg'
-
-const navItems = [
-	{
-		title: 'Home',
-		address: '/',
-		active: false,
-	},
-	{
-		title: 'About',
-		address: '/about',
-		active: true,
-	},
-	{
-		title: 'The Team',
-		address: '/person',
-		active: false,
-	},
-	{
-		title: 'Services',
-		address: '#',
-		active: false,
-	},
-	{
-		title: 'Contact',
-		address: '#',
-		active: false,
-	},
-]
+import jumbotronImage from '../assets/images/stock-1.jpeg'
 
 const About = () => (
 	<>
 		<Helmet>
-			<title>About :: Agency</title>
+			<title>About</title>
 		</Helmet>
-		<Container>
-			<div className="container">
-				<Bar left="info@testemail.com" right="call us now 020 341 123123" />
-				<Header>
-					<img src={logoImage} alt="Logo" />
-				</Header>
-				<Nav items={navItems} />
-				<section className="about">
-					<Layout>
-						<Jumbotron justifyContent="flex-start" alignItems="flex-end">
-							<div className="jumbotron">
-								<Title>About us</Title>
-							</div>
-						</Jumbotron>
-					</Layout>
-					<Layout padded>
-						<div className="content">
-							<div className="flex">
-								<p className="about-text">
-									Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae quam quaerat dolore consectetur doloribus eaque saepe nesciunt. Doloremque dicta nostrum laudantium nulla at deserunt nesciunt repellendus, non voluptate similique, earum perferendis culpa excepturi repudiandae harum. Repellat eligendi quod ex deserunt eaque doloribus asperiores! Accusamus quasi necessitatibus, laudantium debitis quis, aut labore illum hic animi aliquam omnis qui commodi saepe facilis placeat soluta eos. Ad, odio quo. Porro placeat quia tempore odit, quibusdam a magni sunt ipsum ipsa itaque adipisci cumque aperiam quod voluptatibus optio nostrum alias reiciendis fugiat aspernatur qui laborum officia nulla ea. Suscipit, dicta error sint laudantium iusto, consectetur quae architecto accusantium quas quod excepturi et quia delectus expedita inventore corrupti quasi debitis aut. Reiciendis, suscipit? Voluptatibus commodi quae accusamus expedita, deleniti quia. A quos dolor doloremque error accusamus, magni autem quia quam? Debitis qui corrupti rem cupiditate. Earum libero, enim omnis perspiciatis exercitationem accusantium soluta iste cumque numquam optio sit assumenda aspernatur odio nulla autem veritatis dignissimos quibusdam a! Itaque consequuntur velit impedit distinctio eveniet consequatur similique quibusdam nobis maiores veritatis. Commodi tempora impedit odio minus ea modi nemo, quidem rerum esse unde harum quasi dolorem sit libero eaque. Ducimus rem quae tempora porro sapiente architecto aperiam.
-								</p>
-								<div className="about-image">
-									<img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80" alt="business" />
-								</div>
-							</div>
+
+		<div className="flex flex-col min-h-screen text-shade">
+			<div className="flex-1 mt-20 md:mt-0">
+				<Jumbotron
+					overlay
+					image={jumbotronImage}
+				/>
+				<Layout>
+					<div className="flex justify-center text-center mb-16 md:mt-16">
+						<div className="sm:max-w-sm md:max-w-md lg:max-w-lg">
+							<h1 className="font-heading text-shade font-bold text-3xl md:text-4xl">About Us</h1>
+							<h2 className="font-heading text-shade text-lg md:text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro veritatis quam dolorum, assumenda asperiores inventore facilis sapiente!</h2>
 						</div>
-					</Layout>
-				</section>
+					</div>
+				</Layout>
+				<div className="flex justify-center items-center text-accent my-16 flex-wrap md:flex-nowrap">
+					<span className="material-icons text-6xl mx-4">stars</span>
+					<span className="material-icons text-6xl mx-4">stars</span>
+					<span className="material-icons text-6xl mx-4">stars</span>
+					<span className="material-icons text-6xl mx-4">stars</span>
+					<span className="material-icons text-6xl mx-4">stars</span>
+				</div>
+				<Layout>
+					<h1 className="text-center font-heading text-4xl my-16 mb-8">&quot;Best in business!&quot;</h1>
+					<p className="text-center mb-16">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur nesciunt, deleniti iure minus, doloribus blanditiis dolorem autem quaerat hic accusantium consectetur recusandae. Pariatur recusandae maxime aliquam quis modi, voluptatum distinctio quae sint nulla sed, dicta quia, quaerat placeat corrupti rerum. Sequi deserunt odit commodi harum eum laborum illum in minus repellat veniam soluta, distinctio facere fugit amet repudiandae culpa molestiae reiciendis quisquam nobis perferendis veritatis, voluptates corrupti praesentium? Doloribus voluptatibus voluptatem doloremque architecto aliquid velit tempore nulla harum consequatur natus. Atque sit, fuga facere veniam aspernatur explicabo libero, molestias voluptate animi voluptates illum repellat ipsum reprehenderit odit autem? Eos!</p>
+				</Layout>
 			</div>
-			<Footer>
-				<span>Comapny Name<br />Company Address</span>
-				<div style={{width: '300px', height: '100px', background: 'white'}} />
-			</Footer>
-		</Container>
+			<Footer />
+		</div>
 	</>
 )
 

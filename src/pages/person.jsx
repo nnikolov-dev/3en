@@ -1,11 +1,11 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import Slider from 'react-slick'
+import {AnchorLink} from 'gatsby-plugin-anchor-links'
 import Layout from '../components/Layout'
 import Button from '../components/Button'
 import Jumbotron from '../components/Jumbotron'
 import Footer from '../components/Footer'
-
 
 import jumbotronImage from '../assets/images/stock-7.jpeg'
 
@@ -47,7 +47,7 @@ const Person = () => (
 									</span>
 								</div>
 								<div className="my-4 p-2">
-									<Button full color="shade">Contact</Button>
+									<AnchorLink to="/#contact" stripHash><Button full color="shade">Contact</Button></AnchorLink>
 								</div>
 							</div>
 							<div className="w-full md:w-8/12 md:mt-16 md:px-8 py-8">

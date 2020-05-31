@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {window} from 'browser-monads'
 import cx from 'classnames'
-import {Link} from 'gatsby'
+import {AnchorLink} from 'gatsby-plugin-anchor-links'
 import Card from '../Card'
 import Button from '../Button'
 
@@ -59,7 +59,7 @@ const Catalog = () => {
 					</div>
 					<div className="md:pl-10 mt-4 md:mt-0">
 						<p className="text-lg mb-2">Have a question?</p>
-						<Link to="/#contact"><Button white>Contact us</Button></Link>
+						<AnchorLink to="/#contact" stripHash><Button white>Contact us</Button></AnchorLink>
 					</div>
 				</div>
 			</div>

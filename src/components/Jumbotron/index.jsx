@@ -18,7 +18,7 @@ const Jumbotron = ({image, children, overlay, full}) => {
 	const bgClass = cx(
 		'absolute w-full h-full bg-cover bg-center invisible md:visible',
 		{
-			'bg-fixed': full,
+			'bg-fixed ': full,
 		},
 	)
 

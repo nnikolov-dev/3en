@@ -41,16 +41,16 @@ const Footer = () => (
 					<h1 className="uppercase text-xl">Services</h1>
 					<ul>
 						<li>
-							<Link to="/">Criminal Law</Link>
+							<Link to="/services">Criminal Law</Link>
 						</li>
 						<li>
-							<Link to="/">Matriomonial Law</Link>
+							<Link to="/services">Matriomonial Law</Link>
 						</li>
 						<li>
-							<Link to="/">Motoring Offenses</Link>
+							<Link to="/services">Motoring Offenses</Link>
 						</li>
 						<li>
-							<Link to="/">Other</Link>
+							<Link to="/services">Other</Link>
 						</li>
 					</ul>
 				</div>
@@ -58,9 +58,9 @@ const Footer = () => (
 					<h1 className="uppercase text-xl">Site Map</h1>
 					<ul>
 						<li><Link to="/">Home</Link></li>
-						<li><Link to="/">About</Link></li>
-						<li><Link to="/">The Team</Link></li>
-						<li><Link to="/">Services</Link></li>
+						<li><Link to="/about">About</Link></li>
+						<li><Link to="/team">The Team</Link></li>
+						<li><Link to="/services">Services</Link></li>
 					</ul>
 				</div>
 				<div className="mb-4">

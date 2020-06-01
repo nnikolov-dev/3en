@@ -43,7 +43,31 @@ const Person = () => (
 										Areas of expertise
 									</span>
 									<span className="text-right font-light w-full">
-										Criminal, Motoring
+										Criminal, Motoring, Other
+									</span>
+								</div>
+								<div className="m-2 py-2 flex border-b-2 border-gray-400">
+									<span className="w-full">
+										Education
+									</span>
+									<span className="text-right font-light w-full">
+										University of Surrey
+									</span>
+								</div>
+								<div className="m-2 py-2 flex border-b-2 border-gray-400">
+									<span className="w-full">
+										Direct Access
+									</span>
+									<span className="text-right font-light w-full">
+										Yes
+									</span>
+								</div>
+								<div className="m-2 py-2 flex border-b-2 border-gray-400">
+									<span className="w-full">
+										Awards
+									</span>
+									<span className="text-right font-light w-full">
+										Award 2019, Award 2019, Award 2018
 									</span>
 								</div>
 								<div className="my-4 p-2">
@@ -59,9 +83,23 @@ const Person = () => (
 									))}
 								</Slider>
 								<h1 className="mt-16 font-heading text-shade font-bold text-3xl md:text-4xl">About John Doe</h1>
-								<p className="mt-2">
+								<p>
 									Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ducimus adipisci numquam quo blanditiis iste harum, aliquid omnis quam dolorum eaque quibusdam nulla temporibus. Rem, atque repudiandae! Unde odit velit quasi est facere asperiores a voluptas sint, aperiam corrupti totam labore vel illo eaque ea corporis. Aut ex possimus sapiente dolorum, quas veniam quod laudantium excepturi perspiciatis corporis quasi ipsum commodi, neque quos consectetur sunt quo. Dolor commodi debitis aliquam mollitia vero architecto, corporis quo soluta iure error illo saepe, eligendi molestias sit similique sequi et dolores blanditiis, dignissimos totam quaerat. Consectetur esse quae itaque velit eaque, perspiciatis obcaecati praesentium officiis, in sequi animi fuga dolores debitis delectus similique sunt expedita molestiae culpa repellat consequatur nisi? Repellat ex, inventore optio sit itaque quia est sapiente quibusdam molestiae commodi eos, beatae, aperiam sequi veritatis perferendis rerum quasi ut? Cumque quod voluptates saepe, ea totam, commodi amet provident, eius eaque accusantium maxime.
 								</p>
+								<div className="mt-8">
+									<h1 className="font-heading text-shade font-bold text-2xl">Notable Cases</h1>
+									<div className="mt-2 h-96 overflow-y-auto">
+										<div className="flex flex-col space-y-3">
+											{[...Array(5)].fill().map((_, i) => (
+												<div className="w-full border-b-2 border-accent border-dashed pb-3">
+													<h1 className="text-lg font-bold">Case {i + 1}</h1>
+													<h2 className="text-sm">01/01/2019</h2>
+													<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, sapiente? Reiciendis quaerat consectetur illum quis amet illo molestias nostrum earum, eos facere porro eaque molestiae. Earum expedita harum molestias! Libero?</p>
+												</div>
+											))}
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</Layout>

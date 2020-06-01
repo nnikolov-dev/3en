@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
 	siteMetadata: {
 		title: 'Burlington Chambers',
@@ -37,25 +39,18 @@ module.exports = {
 				],
 			},
 		},
-		// {
-		// 	resolve: 'gatsby-plugin-purgecss',
-		// 	options: {
-		// 		printRejected: false,
-		// 		develop: true,
-		// 		tailwind: true,
-		// 	},
-		// },
-		//   resolve: `@kentico/gatsby-source-kontent`,
-		//   options: {
-		//     deliveryClientConfig: {
-		//       projectId: `5ac93d1e-567d-01e6-e3b7-ac435f77b907`,
-		//     },
-		//     languageCodenames: [
-		//       `default`,
-		//       `de-DE`,
-		//       `cs-CZ`,
-		//     ]
-		//   }
-		// }
+		{
+			resolve: '@kentico/gatsby-source-kontent',
+			options: {
+				projectId: process.env.KONTENT_ID,
+				languageCodenames: [
+					'default',
+				],
+				includeTypes: true,
+				usePreviewUrl: true,
+				authorizationKey: process.env.KONTENT_API,
+				includeRawContent: true,
+			},
+		},
 	],
 }

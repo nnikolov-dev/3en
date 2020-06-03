@@ -1,10 +1,10 @@
 import React from 'react'
+import {StaticQuery, graphql} from 'gatsby'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import Layout from '../Layout'
 import Nav from '../Nav'
-import aerialImage from '../../assets/images/stock-1.jpeg'
-import logoImage from '../../assets/images/logo.svg'
+import defaultImage from '../../assets/images/stock-1.jpeg'
 
 const Jumbotron = ({image, children, overlay, full}) => {
 	const headerClass = cx(
@@ -23,26 +23,52 @@ const Jumbotron = ({image, children, overlay, full}) => {
 	)
 
 	return (
-		<header
-			className={headerClass}
-		>
-			<div
-				style={{backgroundImage: `url(${image})`}}
-				className={bgClass}
-			/>
-			{overlay && (<div className="absolute w-full h-full bg-primary bg-opacity-75" />)}
-			<div className="md:hidden absolute w-full h-full flex items-center justify-center">
-				<img
-					src={logoImage}
-					alt="Logo"
-					className="w-32"
-				/>
-			</div>
-			<Layout>
-				<Nav />
-			</Layout>
-			{children}
-		</header>
+		<StaticQuery
+			query={graphql`
+			query jumbotronQuery {
+				kontentItemSiteInformation {
+				  elements {
+					title {
+					  value
+					}
+					logo {
+					  value {
+						url
+					  }
+					}
+				  }
+				}
+			  }												
+	`}
+			render={({
+				kontentItemSiteInformation: {
+					elements: {
+						title: {value: title},
+						logo: {value: [{url: logoImage}]},
+					}},
+			}) => (
+				<header
+					className={headerClass}
+				>
+					<div
+						style={{backgroundImage: `url(${image})`}}
+						className={bgClass}
+					/>
+					{overlay && (<div className="absolute w-full h-full bg-primary bg-opacity-75" />)}
+					<div className="md:hidden absolute w-full h-full flex items-center justify-center">
+						<img
+							src={logoImage}
+							alt={title}
+							className="w-32"
+						/>
+					</div>
+					<Layout>
+						<Nav />
+					</Layout>
+					{children}
+				</header>
+			)}
+		/>
 	)
 }
 
@@ -54,7 +80,7 @@ Jumbotron.propTypes = {
 }
 
 Jumbotron.defaultProps = {
-	image: aerialImage,
+	image: defaultImage,
 	children: '',
 	overlay: false,
 	full: false,

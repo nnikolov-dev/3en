@@ -1,88 +1,413 @@
-// const path = require(`path`);
-// const _ = require(`lodash`);
-// const kontentItemTypeIdentifier = `KontentItem`;
-// const projectReferenceTypeIdentifier = `ProjectReference`;
-// const speakingEngagementTypeIdentifier = `SpeakingEngagement`;
+const path = require('path')
 
-// exports.onCreateNode = ({ node, actions: { createNodeField } }) => {
-//   if (_.has(node, `internal.type`) && _.isString(node.internal.type) && node.internal.type.startsWith(kontentItemTypeIdentifier)) {
-//     let withDetailView = false;
-//     let templateName;
+const pageTemplate = path.resolve('./src/templates/custom-page.jsx')
+const personTemplate = path.resolve('./src/templates/person-page.jsx')
 
-//     if (node.internal.type === `${kontentItemTypeIdentifier}${projectReferenceTypeIdentifier}`) {
-//       templateName = `project-reference`;
-//       withDetailView = true;
-//     }
-//     else if (node.internal.type === `${kontentItemTypeIdentifier}${speakingEngagementTypeIdentifier}`) {
-//       templateName = `speaking-engagement`;
-//       withDetailView = true;
-//     }
+console.log(pageTemplate, personTemplate)
 
-//     if (withDetailView) {
-//       createNodeField({
-//         node,
-//         name: `templateName`,
-//         value: templateName
-//       });
+exports.createPages = ({graphql, actions}) => {
+	const {createPage} = actions
 
-//       createNodeField({
-//         node,
-//         name: `slug`,
-//         value: node.elements.url_slug.value
-//       });
-//     }
+	return new Promise((resolve) => {
+		graphql(`
+    query pageQuery {
+      allKontentItemPage {
+        nodes {
+          elements {
+            slug {
+              value
+            }
+            navigation__navigation {
+              value {
+                codename
+                name
+              }
+            }
+            page_general__background_image {
+              value {
+                url
+              }
+            }
+            page_general__description {
+              value
+            }
+            page_general__keywords {
+              value
+            }
+            page_general__title {
+              value
+            }
+            richtext__content {
+              images {
+                description
+                height
+                image_id
+                url
+                width
+              }
+              links {
+                codename
+                link_id
+                type
+                url_slug
+              }
+              value
+              type
+              name
+              modular_content {
+                id
+                system {
+                  codename
+                  id
+                  language
+                  name
+                  type
+                }
+                ... on kontent_item_layout_flex {
+                  elements {
+                    options {
+                      value {
+                        codename
+                      }
+                    }
+                    richtext__content {
+                      name
+                      type
+                      value
+                      images {
+                        description
+                        height
+                        image_id
+                        url
+                        width
+                      }
+                      links {
+                        codename
+                        link_id
+                        url_slug
+                        type
+                      }
+                      modular_content {
+                        id
+                        system {
+                          codename
+                          id
+                          language
+                          name
+                          type
+                        }
+                        ... on kontent_item_carousel {
+                          elements {
+                            items {
+                              value {
+                                system {
+                                  id
+                                }
+                                ... on kontent_item_carousel_item {
+                                  id
+                                  system {
+                                    codename
+                                    id
+                                    language
+                                    type
+                                    name
+                                  }
+                                  elements {
+                                    richtext__content {
+                                      images {
+                                        description
+                                        height
+                                        image_id
+                                        url
+                                        width
+                                      }
+                                      links {
+                                        codename
+                                        link_id
+                                        type
+                                        url_slug
+                                      }
+                                      name
+                                      type
+                                      value
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                        ... on kontent_item_graphic_stars {
+                          elements {
+                            number_of_stars {
+                              value
+                            }
+                          }
+                        }
+                        ... on kontent_item_service {
+                          elements {
+                            description {
+                              value
+                            }
+                            image {
+                              value {
+                                url
+                              }
+                            }
+                            title {
+                              value
+                            }
+                          }
+                        }
+                        ... on kontent_item_graphic_team {
+                          elements {
+                            title {
+                              value
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                ... on kontent_item_carousel {
+                  elements {
+                    items {
+                      value {
+                        system {
+                          id
+                        }
+                        ... on kontent_item_carousel_item {
+                          id
+                          system {
+                            codename
+                            id
+                            language
+                            type
+                            name
+                          }
+                          elements {
+                            richtext__content {
+                              images {
+                                description
+                                height
+                                image_id
+                                url
+                                width
+                              }
+                              links {
+                                codename
+                                link_id
+                                type
+                                url_slug
+                              }
+                              name
+                              type
+                              value
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                ... on kontent_item_graphic_stars {
+                  elements {
+                    number_of_stars {
+                      value
+                    }
+                  }
+                }
+                ... on kontent_item_service {
+                  elements {
+                    description {
+                      value
+                    }
+                    image {
+                      value {
+                        url
+                      }
+                    }
+                    title {
+                      value
+                    }
+                  }
+                }
+                ... on kontent_item_graphic_team {
+                  elements {
+                    title {
+                      value
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      allKontentItemPerson {
+        nodes {
+          elements {
+            areas_of_expertise {
+              value {
+                ... on kontent_item_service {
+                  id
+                  elements {
+                    title {
+                      value
+                    }
+                  }
+                }
+              }
+            }
+            awards {
+              value
+            }
+            direct_access {
+              value {
+                name
+                codename
+              }
+            }
+            education {
+              value
+            }
+            image {
+              value {
+                url
+              }
+            }
+            name {
+              value
+            }
+            richtext__content {
+              images {
+                description
+                height
+                image_id
+                url
+                width
+              }
+              links {
+                codename
+                type
+                link_id
+                url_slug
+              }
+              modular_content {
+                system {
+                  codename
+                  id
+                  language
+                  name
+                  type
+                }
+                ... on kontent_item_carousel {
+                  elements {
+                    items {
+                      value {
+                        system {
+                          id
+                        }
+                        ... on kontent_item_carousel_item {
+                          id
+                          system {
+                            codename
+                            id
+                            language
+                            type
+                            name
+                          }
+                          elements {
+                            richtext__content {
+                              images {
+                                description
+                                height
+                                image_id
+                                url
+                                width
+                              }
+                              links {
+                                codename
+                                link_id
+                                type
+                                url_slug
+                              }
+                              name
+                              type
+                              value
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                ... on kontent_item_graphic_stars {
+                  elements {
+                    number_of_stars {
+                      value
+                    }
+                  }
+                }
+                ... on kontent_item_service {
+                  elements {
+                    description {
+                      value
+                    }
+                    image {
+                      value {
+                        url
+                      }
+                    }
+                    title {
+                      value
+                    }
+                  }
+                }
+                ... on kontent_item_graphic_team {
+                  elements {
+                    title {
+                      value
+                    }
+                  }
+                }
+              }
+              value
+              type
+              name
+            }
+            year_called {
+              value(formatString: "YYYY")
+            }
+            slug {
+              value
+            }
+          }
+        }
+      }
+    }        
+    `).then((result) => {
+			const pages = result.data.allKontentItemPage.nodes
+			const people = result.data.allKontentItemPerson.nodes
 
-//     createNodeField({
-//       node,
-//       name: `language`,
-//       value: node.system.language
-//     });
-//   }
-// };
-
-// exports.createPages = ({ graphql, actions }) => {
-//   const { createPage } = actions;
-
-//   return new Promise((resolve) => {
-//     graphql(`
-//     {
-//       allKontentItemProjectReference (filter: {preferred_language: {eq: "default"}}) {
-//         nodes {
-//           fields {
-//             templateName
-//             slug
-//             language
-//           }
-//         }
-//       }
-//       allKontentItemSpeakingEngagement (filter: {preferred_language: {eq: "default"}}){
-//         nodes {
-//           fields {
-//             templateName
-//             slug
-//             language
-//           }
-//         }
-//       }
-//     }
-//     `).then(result => {
-//       const union = result.data.allKontentItemProjectReference.nodes.concat(result.data.allKontentItemSpeakingEngagement.nodes);
-
-//       union.forEach(( node ) => {
-//         if (_.has(node, `fields.templateName`) && !_.isNil(node.fields.templateName)) {
-//           createPage({
-//             path: `${node.fields.templateName}/${node.fields.slug}`,
-//             component: path.resolve(`./src/templates/${node.fields.templateName}.js`),
-//             context: {
-//               // Data passed to context is available in page queries as GraphQL variables.
-//               templateName: node.fields.templateName,
-//               slug: node.fields.slug,
-//               language: node.fields.language
-//             },
-//           });
-//         }
-//       });
-//       resolve();
-//     });
-//   });
-// };
+			pages.forEach((page) => {
+				createPage({
+					path: `page/${page.elements.slug.value}`,
+					component: pageTemplate,
+					context: page,
+				})
+				console.log(`created page/${page.elements.slug.value}`)
+			})
+			people.forEach((person) => {
+				createPage({
+					path: `person/${person.elements.slug.value}`,
+					component: personTemplate,
+					context: person,
+				})
+				console.log(`created person/${person.elements.slug.value}`)
+			})
+			resolve()
+		})
+	})
+}

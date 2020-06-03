@@ -1,4 +1,5 @@
 import React from 'react'
+import {graphql} from 'gatsby'
 import Helmet from 'react-helmet'
 import Slider from 'react-slick'
 import Layout from '../components/Layout'
@@ -6,52 +7,123 @@ import Jumbotron from '../components/Jumbotron'
 import Footer from '../components/Footer'
 import Contact from '../components/Contact'
 
-import logoImage from '../assets/images/logo.svg'
-import jumbotronImage from '../assets/images/stock-2.jpeg'
+import RichText from '../components/RichText'
 
-const Index = () => (
-	<>
-		<Helmet>
-			<title>Home</title>
-		</Helmet>
+const Index = ({data: {
+	kontentItemSiteInformation: {elements: {
+		title: {value: title},
+		logo: {value: [{url: logoImage}]},
+		phone_number: {value: phoneNumber},
+	}},
+	kontentItemHomePage: {elements: {
+		background_image: {value: [{url: backgroundImage}]},
+		carousel: {value: [{elements: {items: {value: carouselItems}}}]},
+	}}}}) => (
+		<>
+			<Helmet>
+				<title>Home</title>
+			</Helmet>
 
-		<div className="flex flex-col min-h-screen">
-			<div className="flex-1 mt-20 md:mt-0">
-				<Jumbotron
-					overlay
-					image={jumbotronImage}
-					full
-				>
-					<div className="hidden md:flex absolute w-full h-full items-center justify-center">
-						<img
-							src={logoImage}
-							alt="Logo"
-							className="w-1/2"
-						/>
-					</div>
-				</Jumbotron>
-				<Layout>
-					<div id="contact" className="pb-8 md:py-16 text-center md:text-left">
-						<Contact />
-					</div>
-				</Layout>
-				<section className="bg-lite py-16 text-shade">
-					<div className="max-w-xl mx-auto px-8">
-						<Slider dots infinite autoplay arrows={false}>
-							{[...Array(5)].fill().map((_, i) => (
-								<div className="item w-full" key={`slider-${i}`}>
-									<h1 className="font-title font-bold text-4xl">Company {i}</h1>
-									<p className="mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, ad aspernatur. Distinctio aliquid velit deleniti ex veritatis magnam temporibus architecto optio beatae consectetur! Deserunt itaque accusamus laboriosam nam illo quis.</p>
-								</div>
-							))}
-						</Slider>
-					</div>
-				</section>
+			<div className="flex flex-col min-h-screen">
+				<div className="flex-1 mt-20 md:mt-0">
+					<Jumbotron
+						overlay
+						image={backgroundImage}
+						full
+					>
+						<div className="hidden md:flex absolute w-full h-full items-center justify-center">
+							<img
+								src={logoImage}
+								alt="Logo"
+								className="w-1/2"
+							/>
+						</div>
+					</Jumbotron>
+					<Layout>
+						<div id="contact" className="pb-8 md:py-16 text-center md:text-left">
+							<Contact phoneNumber={phoneNumber} />
+						</div>
+					</Layout>
+					<section className="bg-lite py-16 text-shade">
+						<div className="max-w-xl mx-auto px-8">
+							<Slider dots infinite autoplay arrows={false}>
+								{carouselItems.map(({id, elements: {richtext__content: content}}) => (
+									<div className="item w-full" key={`slider-${id}`}>
+										<RichText content={content} />
+									</div>
+								))}
+							</Slider>
+						</div>
+					</section>
+				</div>
+				<Footer />
 			</div>
-			<Footer />
-		</div>
-	</>
+		</>
 )
 
+export const query = graphql`
+query homeQuery {
+	kontentItemSiteInformation {
+	  elements {
+		title {
+		  value
+		}
+		logo {
+		  value {
+			url
+		  }
+		}
+		phone_number {
+		  value
+		}
+	  }
+	}
+	kontentItemHomePage {
+	  elements {
+		background_image {
+		  value {
+			url
+		  }
+		}
+		carousel {
+		  value {
+			... on kontent_item_carousel {
+			  id
+			  elements {
+				items {
+				  value {
+					... on kontent_item_carousel_item {
+					  id
+					  elements {
+						richtext__content {
+						  images {
+							description
+							height
+							url
+							image_id
+							width
+						  }
+						  links {
+							codename
+							link_id
+							url_slug
+							type
+						  }
+						  name
+						  type
+						  value
+						}
+					  }
+					}
+				  }
+				}
+			  }
+			}
+		  }
+		}
+	  }
+	}
+  }   
+`
 
 export default Index

@@ -4,7 +4,7 @@ import Button from '../Button'
 
 const encode = (data) => Object.keys(data).map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`).join('&')
 
-const Contact = () => {
+const Contact = ({phoneNumber}) => {
 	const [fields, setFields] = useState()
 	const [complete, setComplete] = useState(false)
 
@@ -118,7 +118,7 @@ const Contact = () => {
 				<h1 className="text-3xl font-title">Have a Question?</h1>
 				<h2 className="text-xl font-title">We are one short email call away, so contact us now so we can help you with your legal issues today</h2>
 				<h1 className="text-3xl font-title mt-8">Prefer a Call?</h1>
-				<Button color="primary">Call us now</Button>
+				<a href={`tel:${phoneNumber}`} alt="Call us now"><Button color="primary">Call us now</Button></a>
 			</div>
 		</div>
 	)

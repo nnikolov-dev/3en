@@ -42,14 +42,14 @@ module.exports = {
 		{
 			resolve: '@kentico/gatsby-source-kontent',
 			options: {
-				projectId: process.env.KONTENT_ID,
+				projectId: process.env.KONTENT_ID || '',
 				languageCodenames: [
 					'default',
 				],
 				includeTypes: true,
-				usePreviewUrl: true,
-				authorizationKey: process.env.KONTENT_API,
-				includeRawContent: true,
+				usePreviewUrl: !!process.env.KONTENT_API,
+				authorizationKey: process.env.KONTENT_API || '',
+				includeRawContent: !!process.env.KONTENT_API,
 			},
 		},
 	],

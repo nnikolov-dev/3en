@@ -6,7 +6,6 @@ import Layout from '../components/Layout'
 import Jumbotron from '../components/Jumbotron'
 import Footer from '../components/Footer'
 import Contact from '../components/Contact'
-
 import RichText from '../components/RichText'
 
 const Index = ({data: {

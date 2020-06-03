@@ -47,8 +47,10 @@ module.exports = {
 					'default',
 				],
 				includeTypes: true,
-				usePreviewUrl: !!process.env.KONTENT_API,
-				authorizationKey: process.env.KONTENT_API || '',
+				usePreviewUrl: process.env.GATSBY_PREVIEW_ENABLED && process.env.GATSBY_PREVIEW_ENABLED.toLowerCase() === 'true',
+				authorizationKey: process.env.GATSBY_PREVIEW_ENABLED && process.env.GATSBY_PREVIEW_ENABLED.toLowerCase() === 'true'
+					? process.env.KONTENT_API
+					: undefined,
 				includeRawContent: !!process.env.KONTENT_API,
 			},
 		},

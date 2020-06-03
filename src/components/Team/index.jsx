@@ -43,10 +43,9 @@ const Team = () => {
 						<Dropdown
 							items={
 								[...new Set(
-									people
+									[].concat(...people
 										.map(({elements: {areas_of_expertise: {value: areasOfExpertise}}}) =>
-											areasOfExpertise.map(({elements: {title: {value: areaOfExpertise}}}) => areaOfExpertise))
-										.flat(),
+											areasOfExpertise.map(({elements: {title: {value: areaOfExpertise}}}) => areaOfExpertise))),
 								)]
 							}
 							onChange={handleChange}

@@ -46,7 +46,7 @@ const Card = ({image, children, description, modal, onClick}) => {
 					</div>
 					<div className="md:pl-10 mt-4 md:mt-0">
 						<p className="text-lg mb-2">Have a question?</p>
-						<AnchorLink to="/#contact" stripHash><Button white>Contact us</Button></AnchorLink>
+						<AnchorLink to="/#contact" stripHash><Button theme="white">Contact us</Button></AnchorLink>
 					</div>
 				</div>
 			</div>

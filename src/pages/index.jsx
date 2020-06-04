@@ -7,6 +7,7 @@ import Jumbotron from '../components/Jumbotron'
 import Footer from '../components/Footer'
 import Contact from '../components/Contact'
 import RichText from '../components/RichText'
+import Preview from '../components/Preview'
 
 const Index = ({data: {
 	kontentItemSiteInformation: {elements: {
@@ -14,15 +15,20 @@ const Index = ({data: {
 		logo: {value: [{url: logoImage}]},
 		phone_number: {value: phoneNumber},
 	}},
-	kontentItemHomePage: {elements: {
-		background_image: {value: [{url: backgroundImage}]},
-		carousel: {value: [{elements: {items: {value: carouselItems}}}]},
-	}}}}) => (
+	kontentItemHomePage: {
+		system: {
+			id,
+		},
+		elements: {
+			background_image: {value: [{url: backgroundImage}]},
+			carousel: {value: [{elements: {items: {value: carouselItems}}}]},
+		},
+	}}}) => (
 		<>
 			<Helmet>
 				<title>Home</title>
 			</Helmet>
-
+			<Preview id={id} title="Home Page" />
 			<div className="flex flex-col min-h-screen">
 				<div className="flex-1 mt-20 md:mt-0">
 					<Jumbotron
@@ -46,8 +52,8 @@ const Index = ({data: {
 					<section className="bg-lite py-16 text-shade">
 						<div className="max-w-xl mx-auto px-8">
 							<Slider dots infinite autoplay arrows={false}>
-								{carouselItems.map(({id, elements: {richtext__content: content}}) => (
-									<div className="item w-full" key={`slider-${id}`}>
+								{carouselItems.map(({id: sliderId, elements: {richtext__content: content}}) => (
+									<div className="item w-full" key={`slider-${sliderId}`}>
 										<RichText content={content} />
 									</div>
 								))}
@@ -78,6 +84,9 @@ query homeQuery {
 	  }
 	}
 	kontentItemHomePage {
+	  system {
+	    id
+	  }
 	  elements {
 		background_image {
 		  value {

@@ -5,6 +5,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "serve": "gatsby serve",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix"
   },
@@ -53,7 +54,8 @@
     "react-helmet": "^5.2.0",
     "react-slick": "^0.26.1",
     "slick-carousel": "^1.8.1",
-    "tailwindcss": "^1.4.6"
+    "tailwindcss": "^1.4.6",
+    "tailwindcss-classnames": "^1.3.7"
   },
   "devDependencies": {
     "eslint": "^5.7.0",

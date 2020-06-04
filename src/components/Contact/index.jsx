@@ -105,7 +105,6 @@ const Contact = ({phoneNumber}) => {
 						<p className="text-gray-600 text-sm">I consent to having this website store my submitted information so they can respond to my inquiry.</p>
 					</div>
 					<Button
-						color={complete ? 'green-500' : 'primary'}
 						full
 						type="submit"
 						disabled={complete}
@@ -118,7 +117,7 @@ const Contact = ({phoneNumber}) => {
 				<h1 className="text-3xl font-title">Have a Question?</h1>
 				<h2 className="text-xl font-title">We are one short email call away, so contact us now so we can help you with your legal issues today</h2>
 				<h1 className="text-3xl font-title mt-8">Prefer a Call?</h1>
-				<a href={`tel:${phoneNumber}`} alt="Call us now"><Button color="primary">Call us now</Button></a>
+				<a href={`tel:${phoneNumber}`} alt="Call us now"><Button primary>Call us now</Button></a>
 			</div>
 		</div>
 	)

@@ -3,16 +3,27 @@ import cx from 'classnames'
 import PropTypes from 'prop-types'
 
 
-const Button = ({children, color, white, full, type, disabled}) => {
+const Button = ({children, full, type, theme, disabled}) => {
 	const buttonClass = cx(
-		'relative overflow-hidden bg-transparent group hover:text-white font-title font-bold uppercase text-sm py-2 px-8',
+		'relative overflow-hidden bg-transparent group hover:text-white font-title font-bold uppercase border text-sm py-2 px-8',
 		{
-			'text-white border-white': white,
-			[`text-${color} border-${color}`]: !white && !disabled,
+			'text-white border-white hover:border-secondary': theme === 'white',
+			'text-primary border-primary': theme === 'primary',
+			'text-secondary border-secondary': theme === 'secondary',
+			'text-shade border-shade': theme === 'shade',
+			'text-accent border-accent': theme === 'accent',
+			'bg-gray-300 text-shade border-none hover:text-shade': disabled,
 			'w-full': full,
 			'w-auto': !full,
-			[`bg-${color} text-white`]: disabled,
-			[`border hover:border-${color}`]: !disabled,
+		},
+	)
+	const buttonClassInner = cx(
+		'absolute w-full inset-0 border border-transparent transform translate-y-full group-hover:translate-y-0 ease-in-out duration-150',
+		{
+			'bg-primary': theme === 'primary' && !disabled,
+			'bg-secondary': (theme === 'secondary' || theme === 'white') && !disabled,
+			'bg-shade': theme === 'shade' && !disabled,
+			'bg-accent': theme === 'accent' && !disabled,
 		},
 	)
 	return (
@@ -22,7 +33,7 @@ const Button = ({children, color, white, full, type, disabled}) => {
 			className={buttonClass}
 			disabled={disabled}
 		>
-			<div className={`absolute w-full inset-0 border border-transparent bg-${color} transform translate-y-full group-hover:translate-y-0 ease-in-out duration-150`} />
+			<div className={buttonClassInner} />
 			<span className="relative">{children}</span>
 		</button>
 	)
@@ -30,20 +41,16 @@ const Button = ({children, color, white, full, type, disabled}) => {
 
 Button.propTypes = {
 	children: PropTypes.string,
-	color: PropTypes.string,
-	white: PropTypes.bool,
 	full: PropTypes.bool,
 	type: PropTypes.string,
-	disabled: PropTypes.bool,
+	theme: PropTypes.oneOf(['white, primary, secondary, accent, shade']),
 }
 
 Button.defaultProps = {
 	children: '',
-	color: 'secondary',
-	white: false,
 	full: false,
 	type: 'button',
-	disabled: false,
+	theme: 'primary',
 }
 
 export default Button

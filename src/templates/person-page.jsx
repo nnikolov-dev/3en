@@ -105,7 +105,7 @@ const PersonPage = ({pageContext: {
 										</div>
 									)}
 									<div className="my-4 p-2">
-										<AnchorLink to="/#contact" stripHash><Button full color="shade">Contact</Button></AnchorLink>
+										<AnchorLink to="/#contact" stripHash><Button full theme="shade">Contact</Button></AnchorLink>
 									</div>
 								</div>
 								<div className="w-full md:w-8/12 md:mt-16 md:px-8 py-8">

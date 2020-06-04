@@ -13,7 +13,6 @@ const Contact = ({phoneNumber}) => {
 	const handleSubmit = (e) => {
 		e.preventDefault()
 		const form = e.target
-		console.log(form.getAttribute('name'))
 		fetch('/', {
 			method: 'POST',
 			headers: {'Content-Type': 'application/x-www-form-urlencoded'},

@@ -18,13 +18,9 @@ module.exports = {
 		},
 		{
 			resolve: 'gatsby-plugin-offline',
-			// options: {
-			// 	precachePages: ['/about/', '/projects/*'],
-			// },
 		},
 		'gatsby-plugin-postcss',
 		'gatsby-plugin-react-helmet',
-		'gatsby-plugin-sass',
 		'gatsby-plugin-transition-link',
 		'gatsby-plugin-anchor-links',
 		{

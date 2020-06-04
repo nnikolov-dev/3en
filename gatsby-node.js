@@ -13,6 +13,10 @@ exports.createPages = ({graphql, actions}) => {
     query pageQuery {
       allKontentItemPage {
         nodes {
+          system {
+            codename
+            id
+          }
           elements {
             slug {
               value
@@ -386,7 +390,7 @@ exports.createPages = ({graphql, actions}) => {
           }
         }
       }
-    }        
+    }  
     `).then((result) => {
 			const pages = result.data.allKontentItemPage.nodes
 			const people = result.data.allKontentItemPerson.nodes

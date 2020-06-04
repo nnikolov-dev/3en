@@ -21,7 +21,7 @@ const CustomPage = ({pageContext: {
 				<meta name="description" content={description} />
 				<meta name="keywords" content={keywords} />
 			</Helmet>
-			<Preview id={id} />
+			<Preview id={id} title={title} />
 			<div className="flex flex-col min-h-screen text-shade">
 				<div className="flex-1 mt-20 md:mt-0">
 					<Jumbotron

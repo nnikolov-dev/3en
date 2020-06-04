@@ -14,7 +14,6 @@ exports.createPages = ({graphql, actions}) => {
       allKontentItemPage {
         nodes {
           system {
-            codename
             id
           }
           elements {
@@ -251,6 +250,9 @@ exports.createPages = ({graphql, actions}) => {
       }
       allKontentItemPerson {
         nodes {
+          system {
+            id
+          }
           elements {
             areas_of_expertise {
               value {
@@ -390,7 +392,7 @@ exports.createPages = ({graphql, actions}) => {
           }
         }
       }
-    }  
+    }    
     `).then((result) => {
 			const pages = result.data.allKontentItemPage.nodes
 			const people = result.data.allKontentItemPerson.nodes

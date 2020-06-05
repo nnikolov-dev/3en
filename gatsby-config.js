@@ -22,6 +22,12 @@ module.exports = {
 		'gatsby-plugin-transition-link',
 		'gatsby-plugin-anchor-links',
 		{
+			resolve: 'gatsby-plugin-html-attributes',
+			options: {
+				lang: 'en',
+			},
+		},
+		{
 			resolve: 'gatsby-plugin-google-fonts',
 			options: {
 				fonts: [

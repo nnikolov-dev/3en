@@ -54,6 +54,7 @@ const Contact = ({phoneNumber}) => {
 				<div className="relative">
 					<input type="hidden" name="form-name" value="contact" />
 					<input hidden name="bot-field" onChange={handleChange} />
+					<label htmlFor="name" className="hidden">Name</label>
 					<div className="flex md:space-x-5 flex-col md:flex-row">
 						<input
 							type="text"
@@ -64,6 +65,7 @@ const Contact = ({phoneNumber}) => {
 							disabled={complete}
 							onChange={handleChange}
 						/>
+						<label htmlFor="number" className="hidden">Number</label>
 						<input
 							type="tel"
 							name="number"
@@ -74,6 +76,7 @@ const Contact = ({phoneNumber}) => {
 							onChange={handleChange}
 						/>
 					</div>
+					<label htmlFor="email" className="hidden">Email</label>
 					<input
 						type="email"
 						name="email"
@@ -83,6 +86,7 @@ const Contact = ({phoneNumber}) => {
 						disabled={complete}
 						onChange={handleChange}
 					/>
+					<label htmlFor="message" className="hidden">Message</label>
 					<textarea
 						cols="10"
 						rows="3"
@@ -94,6 +98,7 @@ const Contact = ({phoneNumber}) => {
 						onChange={handleChange}
 					/>
 					<div className="flex items-baseline space-x-2 my-2">
+						<label htmlFor="gdpr" className="hidden">Consent for GDPR</label>
 						<input
 							type="checkbox"
 							name="gdpr"
@@ -101,7 +106,7 @@ const Contact = ({phoneNumber}) => {
 							required
 							disabled={complete}
 						/>
-						<p className="text-gray-600 text-sm">I consent to having this website store my submitted information so they can respond to my inquiry.</p>
+						<p className="text-shade text-sm">I consent to having this website store my submitted information so they can respond to my inquiry.</p>
 					</div>
 					<Button
 						full

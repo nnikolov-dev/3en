@@ -51,7 +51,7 @@ const Card = ({image, children, description, modal, onClick}) => {
 				</div>
 			</div>
 			<div className="group p-2 bg-lite cursor-pointer" onClick={handleClick}>
-				<img src={image} className="h-32 object-cover w-full" alt="Law" />
+				<img src={image} className="h-32 object-cover w-full" alt={children} />
 				<h3 className="text-xl font-title mb-0 font-light text-center py-2 bg-shade text-white group-hover:bg-primary">{children}</h3>
 			</div>
 		</>

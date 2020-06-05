@@ -16,9 +16,7 @@ module.exports = {
 				display: 'standalone',
 			},
 		},
-		{
-			resolve: 'gatsby-plugin-offline',
-		},
+		'gatsby-plugin-offline',
 		'gatsby-plugin-postcss',
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-transition-link',
@@ -48,6 +46,20 @@ module.exports = {
 					? process.env.KONTENT_API
 					: undefined,
 				includeRawContent: !!process.env.KONTENT_API,
+			},
+		},
+		{
+			resolve: 'gatsby-plugin-netlify',
+			options: {
+				headers: {
+					'/*': [
+						'cache-control: max-age=0,no-cache,no-store,must-revalidate',
+					],
+				},
+				allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
+				mergeSecurityHeaders: true, // boolean to turn off the default security headers
+				mergeLinkHeaders: true, // boolean to turn off the default gatsby js headers
+				mergeCachingHeaders: false, // boolean to turn off the default caching headers
 			},
 		},
 	],

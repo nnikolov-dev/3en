@@ -43,7 +43,7 @@ Button.propTypes = {
 	children: PropTypes.string,
 	full: PropTypes.bool,
 	type: PropTypes.string,
-	theme: PropTypes.oneOf(['white, primary, secondary, accent, shade']),
+	theme: PropTypes.oneOf(['white', 'primary', 'secondary', 'accent', 'shade']),
 }
 
 Button.defaultProps = {

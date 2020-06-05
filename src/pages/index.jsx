@@ -1,6 +1,5 @@
 import React from 'react'
 import {graphql} from 'gatsby'
-import Helmet from 'react-helmet'
 import Slider from 'react-slick'
 import Layout from '../components/Layout'
 import Jumbotron from '../components/Jumbotron'
@@ -8,10 +7,10 @@ import Footer from '../components/Footer'
 import Contact from '../components/Contact'
 import RichText from '../components/RichText'
 import Preview from '../components/Preview'
+import SEO from '../components/SEO'
 
 const Index = ({data: {
 	kontentItemSiteInformation: {elements: {
-		title: {value: title},
 		logo: {value: [{url: logoImage}]},
 		phone_number: {value: phoneNumber},
 	}},
@@ -25,10 +24,8 @@ const Index = ({data: {
 		},
 	}}}) => (
 		<>
-			<Helmet>
-				<title>Home</title>
-			</Helmet>
 			<Preview id={id} title="Home Page" />
+			<SEO />
 			<div className="flex flex-col min-h-screen">
 				<div className="flex-1 mt-20 md:mt-0">
 					<Jumbotron
@@ -70,9 +67,6 @@ export const query = graphql`
 query homeQuery {
 	kontentItemSiteInformation {
 	  elements {
-		title {
-		  value
-		}
 		logo {
 		  value {
 			url

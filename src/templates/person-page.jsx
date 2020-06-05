@@ -1,5 +1,4 @@
 import React from 'react'
-import {Helmet} from 'react-helmet'
 import {AnchorLink} from 'gatsby-plugin-anchor-links'
 import Jumbotron from '../components/Jumbotron'
 import Layout from '../components/Layout'
@@ -7,8 +6,9 @@ import RichText from '../components/RichText'
 import Button from '../components/Button'
 import Footer from '../components/Footer'
 import Preview from '../components/Preview'
+import SEO from '../components/SEO'
 
-import jumbotronImage from '../assets/images/stock-5.jpeg'
+import jumbotronImage from '../assets/images/person.jpeg'
 import defaultImage from '../assets/images/jupiter.svg'
 
 const PersonPage = ({pageContext: {
@@ -24,12 +24,8 @@ const PersonPage = ({pageContext: {
 		richtext__content: content,
 	}}}) => (
 		<>
-			<Helmet>
-				<title>{name}</title>
-				<meta name="description" content={name} />
-				<meta name="keywords" content={name} />
-			</Helmet>
 			<Preview id={id} title={name} />
+			<SEO title={name} description={`The profile of ${name}`} keywords={name} />
 			<div className="flex flex-col min-h-screen text-shade">
 				<div className="flex-1 mt-20 md:mt-0">
 					<Jumbotron

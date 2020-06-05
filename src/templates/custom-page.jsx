@@ -1,10 +1,10 @@
 import React from 'react'
-import {Helmet} from 'react-helmet'
 import Jumbotron from '../components/Jumbotron'
 import Layout from '../components/Layout'
 import RichText from '../components/RichText'
 import Footer from '../components/Footer'
 import Preview from '../components/Preview'
+import SEO from '../components/SEO'
 
 const CustomPage = ({pageContext: {
 	system: {id},
@@ -16,12 +16,8 @@ const CustomPage = ({pageContext: {
 		richtext__content: content,
 	}}}) => (
 		<>
-			<Helmet>
-				<title>{title}</title>
-				<meta name="description" content={description} />
-				<meta name="keywords" content={keywords} />
-			</Helmet>
 			<Preview id={id} title={title} />
+			<SEO title={title} description={description} keywords={keywords} />
 			<div className="flex flex-col min-h-screen text-shade">
 				<div className="flex-1 mt-20 md:mt-0">
 					<Jumbotron

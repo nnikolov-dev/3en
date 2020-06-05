@@ -58,7 +58,7 @@ const Nav = () => {
 						{pages.map(({elements: {navigation__navigation: {value: [displayNav]}, page_general__title: {value: title}, slug: {value: slug}}}) => {
 							if (displayNav) {
 								return (
-									<NavItem address={`/page/${slug}`}>{title}</NavItem>
+									<NavItem address={`/page/${slug}`} key={`nav-item-${slug}`}>{title}</NavItem>
 								)
 							}
 							return null
@@ -70,7 +70,7 @@ const Nav = () => {
 						{pages.map(({elements: {navigation__navigation: {value: [displayNav]}, page_general__title: {value: title}, slug: {value: slug}}}) => {
 							if (displayNav) {
 								return (
-									<div className="mb-5"><NavItem address={`/page/${slug}`}>{title}</NavItem></div>
+									<div className="mb-5" key={`nav-item-${slug}`}><NavItem address={`/page/${slug}`}>{title}</NavItem></div>
 								)
 							}
 							return null

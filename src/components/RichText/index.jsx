@@ -14,9 +14,10 @@ const RichText = ({content, flex}) => {
 	)
 
 	const imageClass = cx(
-		'w-full object-cover',
+		'bject-cover',
 		{
-			'my-8': !flex,
+			'w-full my-8': !flex,
+			'w-96 flex-grow-0': flex,
 		},
 	)
 

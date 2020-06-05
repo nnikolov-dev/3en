@@ -4,7 +4,6 @@ import cx from 'classnames'
 import PropTypes from 'prop-types'
 import Layout from '../Layout'
 import Nav from '../Nav'
-import defaultImage from '../../assets/images/stock-1.jpeg'
 
 const Jumbotron = ({image, children, overlay, full}) => {
 	const headerClass = cx(
@@ -80,7 +79,7 @@ Jumbotron.propTypes = {
 }
 
 Jumbotron.defaultProps = {
-	image: defaultImage,
+	image: null,
 	children: '',
 	overlay: false,
 	full: false,

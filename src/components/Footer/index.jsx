@@ -108,8 +108,8 @@ const Footer = () => (
 							<h1 className="uppercase text-xl">Services</h1>
 							<ul>
 								{services.map(({elements: {title: {value: service}}}) => (
-									<li>
-										<Link to="/services">{service}</Link>
+									<li key={`footer-service-${service}`}>
+										<Link to="/page/services">{service}</Link>
 									</li>
 								))}
 							</ul>
@@ -120,7 +120,7 @@ const Footer = () => (
 								<li><Link to="/">Home</Link></li>
 								{pages.map(({elements: {navigation__navigation: {value: [displayNav]}, page_general__title: {value: pageTitle}, slug: {value: slug}}}) => {
 									if (displayNav) {
-										return (<li><Link to={`page/${slug}`}>{pageTitle}</Link></li>)
+										return (<li key={`footer-page-${slug}`}><Link to={`/page/${slug}`}>{pageTitle}</Link></li>)
 									}
 									return null
 								})}

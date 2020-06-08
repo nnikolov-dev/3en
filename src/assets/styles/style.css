@@ -2,23 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-.rich-text h1, h2, h3, h4 {
-    @apply font-heading;
-    @apply mb-4;
+h1, h2, h3, h4 {
+    @apply font-body;
 }
 
-.rich-text h1 {
-    @apply text-4xl;
+h1 {
+    @apply text-5xl;
 }
 
-.rich-text h2 {
+h2 {
+    @apply text-3xl;
+}
+
+h3 {
     @apply text-2xl;
 }
 
-.rich-text h3 {
-    @apply text-xl;
+.background {
+    background: linear-gradient(theme('colors.secondary'), theme('colors.shade'));
 }
 
-.rich-text h4 {
+.background-2 {
+    background: linear-gradient(theme('colors.shade'), theme('colors.primary'));
 }
 
+.background-3 {
+    background: linear-gradient(theme('colors.primary'), theme('colors.shade'));
+}
+
+.background-4 {
+    background: linear-gradient(theme('colors.accent'), theme('colors.secondary'));
+}
+
+.bg-pattern {
+    background-image: url('../images/bg-waves.svg')
+}

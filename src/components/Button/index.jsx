@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 const Button = ({children, full, type, theme, disabled}) => {
 	const buttonClass = cx(
-		'relative overflow-hidden bg-transparent group hover:text-white font-title font-bold uppercase border text-sm py-2 px-8',
+		'relative overflow-hidden bg-transparent group hover:text-white font-bold uppercase border text-sm py-2 px-8 rounded',
 		{
 			'text-white border-white hover:border-secondary': theme === 'white',
 			'text-primary border-primary': theme === 'primary',
@@ -18,7 +18,7 @@ const Button = ({children, full, type, theme, disabled}) => {
 		},
 	)
 	const buttonClassInner = cx(
-		'absolute w-full inset-0 border border-transparent transform translate-y-full group-hover:translate-y-0 ease-in-out duration-150',
+		'absolute w-full inset-0 border border-transparent transform translate-y-full group-hover:translate-y-0 ease-in-out duration-150 rounded',
 		{
 			'bg-primary': theme === 'primary' && !disabled,
 			'bg-secondary': (theme === 'secondary' || theme === 'white') && !disabled,

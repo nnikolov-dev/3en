@@ -9,7 +9,7 @@ module.exports = {
 		},
 		fontFamily: {
 			display: ['Gilroy', 'sans-serif'],
-			body: ['Graphik', 'sans-serif'],
+			body: ['Open Sans', 'sans-serif'],
 			title: ['Montserrat', 'serif'],
 			heading: ['Lora', 'serif'],
 		},
@@ -33,11 +33,11 @@ module.exports = {
 				96: '24rem',
 			},
 			colors: {
-				primary: '#366897',
-				secondary: '#7BBCD4',
-				accent: '#7E8370',
-				shade: '#1F272B',
-				lite: '#EAE8E1',
+				primary: '#5EAAE8',
+				secondary: '#66A2C8',
+				accent: '#847085',
+				shade: '#304B76',
+				lite: '#F4F1F3',
 			},
 			minHeight: {
 				half: '30vh',

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Layout = ({children}) => (
-	<div className="relative mx-auto max-w-screen-xl px-8">
+	<div className="container mx-auto px-4">
 		{children}
 	</div>
 )

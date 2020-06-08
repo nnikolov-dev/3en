@@ -2,6 +2,9 @@ import React from 'react'
 import {Link, StaticQuery, graphql} from 'gatsby'
 import Layout from '../Layout'
 import RichText from '../RichText'
+import Map from '../Map'
+
+import logoImage from '../../assets/images/logo_white.svg'
 
 const Footer = () => (
 	<StaticQuery
@@ -88,34 +91,22 @@ const Footer = () => (
 			kontentItemSiteInformation: {
 				elements: {
 					title: {value: title},
-					logo: {value: [{url: logoImage}]},
 					address,
 					working_hours: workingHours,
 				}},
-			allKontentItemService: {nodes: services},
 		}) => (
 			<footer className="py-16 bg-shade text-white">
 				<Layout>
 					<div className="flex justify-center">
-						<img src={logoImage} alt={title} className="max-w-sm" />
+						<img src={logoImage} alt={title} className="w-48" />
 					</div>
 					<div className="flex flex-col md:flex-row justify-center md:justify-between text-center md:text-left my-16 w-full">
 						<div className="mb-4">
-							<h1 className="uppercase text-xl">Working Hours</h1>
+							<h1 className="uppercase text-xl">Работни часове</h1>
 							<RichText content={workingHours} />
 						</div>
 						<div className="mb-4">
-							<h1 className="uppercase text-xl">Services</h1>
-							<ul>
-								{services.map(({elements: {title: {value: service}}}) => (
-									<li key={`footer-service-${service}`}>
-										<Link to="/page/services">{service}</Link>
-									</li>
-								))}
-							</ul>
-						</div>
-						<div className="mb-4">
-							<h1 className="uppercase text-xl">Site Map</h1>
+							<h1 className="uppercase text-xl">Карта на сайта</h1>
 							<ul>
 								<li><Link to="/">Home</Link></li>
 								{pages.map(({elements: {navigation__navigation: {value: [displayNav]}, page_general__title: {value: pageTitle}, slug: {value: slug}}}) => {
@@ -127,13 +118,16 @@ const Footer = () => (
 							</ul>
 						</div>
 						<div className="mb-4">
-							<h1 className="uppercase text-xl">Our Office</h1>
+							<h1 className="uppercase text-xl">Адрес</h1>
 							<RichText content={address} />
+						</div>
+						<div className="mb-4">
+							<Map />
 						</div>
 					</div>
 					<div className="flex justify-between text-sm border-t border-white border-opacity-25 pt-2">
 						<div>
-							&copy; 2020 Your Company. All Rights Reserved | Terms of Service
+							&copy; 2020 {title}. Всички права запазени
 						</div>
 					</div>
 				</Layout>

@@ -27,8 +27,8 @@ module.exports = {
 				fonts: [
 					'material icons',
 					'roboto:300,400,500,700',
-					'montserrat:400.400i,700,700i',
-					'open sans:400,400i,700,700i',
+					'montserrat:400,400i,700,700i',
+					'open sans:300,300i,400,400i,700,700i',
 					'lora:400,700',
 				],
 			},

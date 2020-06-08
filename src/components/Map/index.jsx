@@ -2,11 +2,17 @@ import React, {useEffect, useRef} from 'react'
 import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
+const hasWindow = typeof window !== 'undefined' && window
+
 const Map = () => {
+	if (!hasWindow) {
+		return null
+	}
+
 	const mapNode = useRef(null)
 
 	useEffect(() => {
-		mapboxgl.accessToken = 'pk.eyJ1Ijoibm5pa29sb3YtZGV2IiwiYSI6ImNrYjZnMDkyMjB6Y3kycm82MnBrYTBoZzMifQ.7d84s2gdcazI0qO2QzwXAw'
+		mapboxgl.accessToken = process.env.GATSBY_MAP_TOKEN
 		const map = new mapboxgl.Map({
 			container: mapNode.current,
 			style: 'mapbox://styles/mapbox/streets-v11',

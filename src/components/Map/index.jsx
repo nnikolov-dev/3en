@@ -12,7 +12,7 @@ const Map = () => {
 	const mapNode = useRef(null)
 
 	useEffect(() => {
-		mapboxgl.accessToken = process.env.GATSBY_MAP_TOKEN
+		mapboxgl.accessToken = process.env.GATSBY_MAPBOX_TOKEN
 		const map = new mapboxgl.Map({
 			container: mapNode.current,
 			style: 'mapbox://styles/mapbox/streets-v11',

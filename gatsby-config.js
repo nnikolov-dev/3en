@@ -1,18 +1,21 @@
 require('dotenv').config()
 
+const languages = JSON.parse(process.env.GATSBY_LANG)
+console.log(languages)
+
 module.exports = {
 	siteMetadata: {
-		title: 'Burlington Chambers',
+		title: '3EH 2000',
 	},
 	plugins: [
 		{
 			resolve: 'gatsby-plugin-manifest',
 			options: {
-				name: 'Burlington Chambers',
-				short_name: 'Burlington Chambers',
+				name: '3EH 2000',
+				short_name: '3EH 2000',
 				start_url: '/',
-				background_color: '#F6F6F6',
-				theme_color: '#366897',
+				background_color: '#304B76',
+				theme_color: '#66A2C8',
 				display: 'standalone',
 			},
 		},
@@ -21,6 +24,7 @@ module.exports = {
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-transition-link',
 		'gatsby-plugin-anchor-links',
+		'gatsby-plugin-meta-redirect',
 		{
 			resolve: 'gatsby-plugin-google-fonts',
 			options: {
@@ -37,9 +41,7 @@ module.exports = {
 			resolve: '@kentico/gatsby-source-kontent',
 			options: {
 				projectId: process.env.KONTENT_ID || '',
-				languageCodenames: [
-					'default',
-				],
+				languageCodenames: languages,
 				includeTypes: true,
 				usePreviewUrl: process.env.GATSBY_PREVIEW_ENABLED && process.env.GATSBY_PREVIEW_ENABLED.toLowerCase() === 'true',
 				authorizationKey: process.env.GATSBY_PREVIEW_ENABLED && process.env.GATSBY_PREVIEW_ENABLED.toLowerCase() === 'true'

@@ -184,10 +184,31 @@ exports.createPages = ({graphql, actions}) => {
 					  }
 					}
 				  }
+				  contact_form__e_mail_address {
+					value
+				  }
+				  contact_form__gdpr_text {
+					value
+				  }
+				  contact_form__message {
+					value
+				  }
+				  contact_form__name {
+					value
+				  }
+				  contact_form__submit_button {
+					value
+				  }
+				  contact_form__submit_message {
+					value
+				  }
+				  contact_form__telephone_number {
+					value
+				  }
 				}
 			  }
 			}
-		  }					  
+		  }				  
     `).then((result) => {
 			const pages = result.data.allKontentItemPage.nodes
 

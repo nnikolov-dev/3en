@@ -2,11 +2,9 @@ import React, {useState} from 'react'
 import cx from 'classnames'
 import Button from '../Button'
 
-import contactImage from '../../assets/images/contact.svg'
-
 const encode = (data) => Object.keys(data).map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`).join('&')
 
-const Contact = () => {
+const Contact = ({placeholders}) => {
 	const [fields, setFields] = useState()
 	const [complete, setComplete] = useState(false)
 
@@ -55,51 +53,51 @@ const Contact = () => {
 			<div className="relative text-shade">
 				<input type="hidden" name="form-name" value="contact" />
 				<input hidden name="bot-field" onChange={handleChange} />
-				<label htmlFor="name" className="hidden">Вашите Имена</label>
+				<label htmlFor="name" className="hidden">{placeholders.contactName}</label>
 				<div className="flex md:space-x-5 flex-col md:flex-row">
 					<input
 						type="text"
 						name="name"
-						placeholder="Вашите Имена"
+						placeholder={placeholders.contactName}
 						className="border p-2 w-full md:w-1/2 focus:border-secondary rounded bg-lite"
 						required
 						disabled={complete}
 						onChange={handleChange}
 					/>
-					<label htmlFor="number" className="hidden">Телефонен Номер</label>
+					<label htmlFor="number" className="hidden">{placeholders.contactTelephone}</label>
 					<input
 						type="tel"
 						name="number"
-						placeholder="Телефонен Номер"
+						placeholder={placeholders.contactTelephone}
 						className="border p-2 w-full md:w-1/2 mt-3 md:mt-0 focus:border-secondary rounded bg-lite"
 						required
 						disabled={complete}
 						onChange={handleChange}
 					/>
 				</div>
-				<label htmlFor="email" className="hidden">Email</label>
+				<label htmlFor="email" className="hidden">{placeholders.contactEmail}</label>
 				<input
 					type="email"
 					name="email"
-					placeholder="Вашият Email Адрес"
+					placeholder={placeholders.contactEmail}
 					className="border p-2 w-full mt-3 focus:border-secondary rounded bg-lite"
 					required
 					disabled={complete}
 					onChange={handleChange}
 				/>
-				<label htmlFor="message" className="hidden">Запитване</label>
+				<label htmlFor="message" className="hidden">{placeholders.contactMessage}</label>
 				<textarea
 					cols="10"
 					rows="3"
 					name="message"
-					placeholder="Запитване"
+					placeholder={placeholders.contactMessage}
 					className="border p-2 mt-3 w-full focus:border-secondary rounded bg-lite"
 					required
 					disabled={complete}
 					onChange={handleChange}
 				/>
 				<div className="flex items-baseline space-x-2 my-2">
-					<label htmlFor="gdpr" className="hidden">Consent for GDPR</label>
+					<label htmlFor="gdpr" className="hidden">{placeholders.contactGDPR}</label>
 					<input
 						type="checkbox"
 						name="gdpr"
@@ -107,7 +105,7 @@ const Contact = () => {
 						required
 						disabled={complete}
 					/>
-					<p className="text-shade text-sm">Разрешавам на този уебсайт да съхраниява моите данни от тази форма, за да може да бъде обработено моето запитване</p>
+					<p className="text-shade text-sm">{placeholders.contactGDPR}</p>
 				</div>
 				<Button
 					full
@@ -115,7 +113,7 @@ const Contact = () => {
 					theme="shade"
 					disabled={complete}
 				>
-					{complete ? 'Вашето запитване бе изпратено!' : 'Изпрати'}
+					{complete ? placeholders.contactSubmitMessage : placeholders.contactSubmit}
 				</Button>
 			</div>
 		</form>

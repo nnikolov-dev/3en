@@ -22,6 +22,13 @@ const Page = ({pageContext: {
 		location__longitude: {value: addressLong},
 		products: {value: productCategories},
 		quote: {value: quoteText},
+		contact_form__name: {value: contactName},
+		contact_form__e_mail_address: {value: contactEmail},
+		contact_form__telephone_number: {value: contactTelephone},
+		contact_form__message: {value: contactMessage},
+		contact_form__gdpr_text: {value: contactGDPR},
+		contact_form__submit_button: {value: contactSubmit},
+		contact_form__submit_message: {value: contactSubmitMessage},
 		work_hours: workHours,
 	},
 	system: {
@@ -132,7 +139,7 @@ const Page = ({pageContext: {
 							<Layout>
 								<div className="flex flex-col-reverse md:flex-row">
 									<div className="w-full md:w-1/2">
-										<Contact />
+										<Contact placeholders={{contactName, contactTelephone, contactEmail, contactMessage, contactGDPR, contactSubmit, contactSubmitMessage}} />
 									</div>
 									<div className="w-full md:w-1/2 md:pl-8 mb-8">
 										<RichText content={sectionContent} />

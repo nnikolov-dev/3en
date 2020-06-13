@@ -15,7 +15,6 @@ const Page = ({pageContext: {
 		title: {value: metaTitle},
 		description: {value: metaDescription},
 		keywords: {value: metaKeywords},
-		last_modified: {value: metaLastModified},
 		logo: {value: [{url: logoUrl, description: logoAlt}]},
 		content: {value: sections},
 		location__address: address,
@@ -35,6 +34,7 @@ const Page = ({pageContext: {
 	system: {
 		id: pageId,
 		language: pageLanguage,
+		last_modified: {value: metaLastModified},
 	},
 }}) => (
 	<>

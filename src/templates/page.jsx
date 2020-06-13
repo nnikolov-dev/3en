@@ -34,7 +34,7 @@ const Page = ({pageContext: {
 	system: {
 		id: pageId,
 		language: pageLanguage,
-		last_modified: {value: metaLastModified},
+		last_modified: metaLastModified,
 	},
 }}) => (
 	<>

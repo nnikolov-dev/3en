@@ -15,6 +15,7 @@ const Page = ({pageContext: {
 		title: {value: metaTitle},
 		description: {value: metaDescription},
 		keywords: {value: metaKeywords},
+		last_modified: {value: metaLastModified},
 		logo: {value: [{url: logoUrl, description: logoAlt}]},
 		content: {value: sections},
 		location__address: address,
@@ -42,6 +43,8 @@ const Page = ({pageContext: {
 			title={metaTitle}
 			description={metaDescription}
 			keywords={metaKeywords}
+			lastModified={metaLastModified}
+			lang={pageLanguage}
 		/>
 		<main className="min-h-screen">
 			<section className="relative h-screen background">

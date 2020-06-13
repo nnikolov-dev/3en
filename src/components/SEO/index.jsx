@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {Helmet} from 'react-helmet'
 
 
-const SEO = ({title, description, keywords}) => (
+const SEO = ({title, description, keywords, lastModified, lang}) => (
 	<Helmet
 		title={title}
 		meta={[
@@ -14,6 +14,10 @@ const SEO = ({title, description, keywords}) => (
 			{
 				name: 'keywords',
 				content: keywords,
+			},
+			{
+				name: 'last-modified',
+				content: lastModified,
 			},
 			{
 				property: 'og:title',
@@ -41,7 +45,7 @@ const SEO = ({title, description, keywords}) => (
 			},
 		]}
 		htmlAttributes={{
-			lang: 'en',
+			lang,
 		}}
 	/>
 )
@@ -50,12 +54,16 @@ SEO.propTypes = {
 	title: PropTypes.string,
 	description: PropTypes.string,
 	keywords: PropTypes.string,
+	lastModified: PropTypes.string,
+	lang: PropTypes.string,
 }
 
 SEO.defaultProps = {
 	title: null,
 	description: null,
 	keywords: null,
+	lastModified: null,
+	lang: 'en',
 }
 
 export default SEO

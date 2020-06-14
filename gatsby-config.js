@@ -22,7 +22,6 @@ module.exports = {
 		'gatsby-plugin-offline',
 		'gatsby-plugin-postcss',
 		'gatsby-plugin-react-helmet',
-		'gatsby-plugin-transition-link',
 		'gatsby-plugin-anchor-links',
 		'gatsby-plugin-meta-redirect',
 		{

@@ -27,6 +27,7 @@
   "dependencies": {
     "@kentico/gatsby-kontent-components": "^6.0.0",
     "@kentico/gatsby-source-kontent": "^6.0.1",
+    "@loadable/component": "^5.12.0",
     "@mapbox/geo-viewport": "^0.4.0",
     "autoprefixer": "^9.8.0",
     "babel-preset-gatsby": "^0.4.8",
@@ -41,17 +42,12 @@
     "gatsby-plugin-netlify": "^2.3.4",
     "gatsby-plugin-offline": "^3.0.37",
     "gatsby-plugin-postcss": "^2.3.2",
-    "gatsby-plugin-purgecss": "^5.0.0",
     "gatsby-plugin-react-helmet": "^3.0.0",
-    "gatsby-plugin-transition-link": "^1.18.0",
-    "lodash": "^4.17.15",
     "mapbox-gl": "^1.10.1",
     "prop-types": "^15.7.2",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
-    "react-slick": "^0.26.1",
-    "slick-carousel": "^1.8.1",
     "tailwindcss": "^1.4.6"
   },
   "devDependencies": {

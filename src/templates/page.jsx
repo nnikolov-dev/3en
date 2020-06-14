@@ -48,10 +48,10 @@ const Page = ({pageContext: {
 			lang={pageLanguage}
 		/>
 		<Scroll />
-		<main className="min-h-screen">
+		<main>
 			<section className="relative h-screen background">
 				<div className="absolute w-full h-full bg-pattern text-shade opacity-25" />
-				<div className="relative z-10 h-full pt-10 md:pt-32">
+				<div className="relative z-10 h-full pt-20 md:pt-32 flex items-center">
 					<Layout>
 						<div className="w-full flex justify-center">
 							<img src={logoUrl} alt={logoAlt} className="w-32 md:w-72" />
@@ -65,7 +65,7 @@ const Page = ({pageContext: {
 								</AnchorLink>
 							))}
 						</div>
-						<div className="mt-24 flex justify-center space-x-2">
+						<div className="md:mt-24 flex justify-center space-x-2">
 							{languages.map((language) => (
 								<AnchorLink to={`/${language}`}>
 									<div className={`${language === pageLanguage ? 'opacity-100' : 'opacity-50'} hover:opacity-100 transition duration-150`}>
@@ -88,7 +88,7 @@ const Page = ({pageContext: {
 				switch (sectionCodename) {
 				case 'koi_sme_nie':
 					return (
-						<section className="relative bg-shade min-h-screen text-lite py-20" id={sectionCodename}>
+						<section className="bg-shade h-screen text-lite py-20" id={sectionCodename}>
 							<Layout>
 								<div className="flex flex-wrap">
 									<div className="w-full md:w-1/2 text-lg">

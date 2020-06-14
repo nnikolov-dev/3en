@@ -5,6 +5,7 @@ import RichText from '../components/RichText'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import Preview from '../components/Preview'
+import Scroll from '../components/Scroll'
 import SEO from '../components/SEO'
 import Products from '../components/Products'
 
@@ -46,6 +47,7 @@ const Page = ({pageContext: {
 			lastModified={metaLastModified}
 			lang={pageLanguage}
 		/>
+		<Scroll />
 		<main className="min-h-screen">
 			<section className="relative h-screen background">
 				<div className="absolute w-full h-full bg-pattern text-shade opacity-25" />

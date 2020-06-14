@@ -13,7 +13,7 @@ const Card = ({children, image, active, onClick}) => {
 	return (
 		<div className={cardClass} onClick={onClick}>
 			<div
-				className="bg-primary group-hover:bg-white w-32 h-32 rounded-full flex-shrink-0"
+				className="bg-primary group-hover:bg-white w-32 h-32 rounded-full flex-shrink-0 bg-center"
 				style={{backgroundImage: image ? `url(${image})` : 'none'}}
 			/>
 			<div className="md:ml-10 mt-2 md:ml-0">

@@ -53,7 +53,7 @@ const Contact = ({placeholders}) => {
 			<div className="relative text-shade">
 				<input type="hidden" name="form-name" value="contact" />
 				<input hidden name="bot-field" onChange={handleChange} />
-				<label htmlFor="name" className="hidden">{placeholders.contactName}</label>
+
 				<div className="flex md:space-x-5 flex-col md:flex-row">
 					<input
 						type="text"
@@ -65,7 +65,7 @@ const Contact = ({placeholders}) => {
 						disabled={complete}
 						onChange={handleChange}
 					/>
-					<label htmlFor="number" className="hidden">{placeholders.contactTelephone}</label>
+					<label htmlFor="name" className="hidden">{placeholders.contactName}</label>
 					<input
 						type="tel"
 						id="number"
@@ -76,8 +76,8 @@ const Contact = ({placeholders}) => {
 						disabled={complete}
 						onChange={handleChange}
 					/>
+					<label htmlFor="number" className="hidden">{placeholders.contactTelephone}</label>
 				</div>
-				<label htmlFor="email" className="hidden">{placeholders.contactEmail}</label>
 				<input
 					type="email"
 					id="email"
@@ -88,7 +88,7 @@ const Contact = ({placeholders}) => {
 					disabled={complete}
 					onChange={handleChange}
 				/>
-				<label htmlFor="message" className="hidden">{placeholders.contactMessage}</label>
+				<label htmlFor="email" className="hidden">{placeholders.contactEmail}</label>
 				<textarea
 					cols="10"
 					rows="3"
@@ -100,8 +100,8 @@ const Contact = ({placeholders}) => {
 					disabled={complete}
 					onChange={handleChange}
 				/>
+				<label htmlFor="message" className="hidden">{placeholders.contactMessage}</label>
 				<div className="flex items-baseline space-x-2 my-2">
-					<label htmlFor="gdpr" className="hidden">{placeholders.contactGDPR}</label>
 					<input
 						type="checkbox"
 						id="gdpr"
@@ -110,6 +110,7 @@ const Contact = ({placeholders}) => {
 						required
 						disabled={complete}
 					/>
+					<label htmlFor="gdpr" className="hidden">{placeholders.contactGDPR}</label>
 					<p className="text-shade text-sm">{placeholders.contactGDPR}</p>
 				</div>
 				<Button

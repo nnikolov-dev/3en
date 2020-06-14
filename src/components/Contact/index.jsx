@@ -57,6 +57,7 @@ const Contact = ({placeholders}) => {
 				<div className="flex md:space-x-5 flex-col md:flex-row">
 					<input
 						type="text"
+						id="name"
 						name="name"
 						placeholder={placeholders.contactName}
 						className="border p-2 w-full md:w-1/2 focus:border-secondary rounded bg-lite"
@@ -67,6 +68,7 @@ const Contact = ({placeholders}) => {
 					<label htmlFor="number" className="hidden">{placeholders.contactTelephone}</label>
 					<input
 						type="tel"
+						id="number"
 						name="number"
 						placeholder={placeholders.contactTelephone}
 						className="border p-2 w-full md:w-1/2 mt-3 md:mt-0 focus:border-secondary rounded bg-lite"
@@ -78,6 +80,7 @@ const Contact = ({placeholders}) => {
 				<label htmlFor="email" className="hidden">{placeholders.contactEmail}</label>
 				<input
 					type="email"
+					id="email"
 					name="email"
 					placeholder={placeholders.contactEmail}
 					className="border p-2 w-full mt-3 focus:border-secondary rounded bg-lite"
@@ -89,6 +92,7 @@ const Contact = ({placeholders}) => {
 				<textarea
 					cols="10"
 					rows="3"
+					id="message"
 					name="message"
 					placeholder={placeholders.contactMessage}
 					className="border p-2 mt-3 w-full focus:border-secondary rounded bg-lite"
@@ -100,6 +104,7 @@ const Contact = ({placeholders}) => {
 					<label htmlFor="gdpr" className="hidden">{placeholders.contactGDPR}</label>
 					<input
 						type="checkbox"
+						id="gdpr"
 						name="gdpr"
 						className="inline-block focus:border-secondary"
 						required

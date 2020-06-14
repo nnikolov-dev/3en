@@ -43,6 +43,22 @@ const SEO = ({title, description, keywords, lastModified, lang}) => (
 				name: 'twitter:description',
 				content: description,
 			},
+			{
+				name: 'charset',
+				content: 'UTF-8',
+			},
+			{
+				name: 'language',
+				content: lang,
+			},
+			{
+				name: 'robots',
+				content: 'index,follow',
+			},
+			{
+				name: 'author',
+				content: 'Nikita Nikolov, https://nnikolov.me',
+			},
 		]}
 		htmlAttributes={{
 			lang,

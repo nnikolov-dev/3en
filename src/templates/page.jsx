@@ -88,7 +88,7 @@ const Page = ({pageContext: {
 				switch (sectionCodename) {
 				case 'koi_sme_nie':
 					return (
-						<section className="bg-shade h-screen text-lite py-20" id={sectionCodename}>
+						<section className="relative bg-shade min-h-screen text-lite py-20" id={sectionCodename}>
 							<Layout>
 								<div className="flex flex-wrap">
 									<div className="w-full md:w-1/2 text-lg">

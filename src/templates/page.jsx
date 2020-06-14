@@ -68,9 +68,10 @@ const Page = ({pageContext: {
 						<div className="md:mt-24 flex justify-center space-x-2">
 							{languages.map((language) => (
 								<AnchorLink to={`/${language}`}>
-									<div className={`${language === pageLanguage ? 'opacity-100' : 'opacity-50'} hover:opacity-100 transition duration-150`}>
-										<img src={`https://www.countryflags.io/${language}/flat/64.png`} alt={language} />
-									</div>
+									<div
+										className={`${language === pageLanguage ? 'opacity-100 shadow-lg' : 'opacity-50'} bg-center bg-fill bg-no-repeat w-10 h-10 overflow-hidden hover:opacity-100 transition duration-150 flex items-center bg-lite rounded-full mx-2`}
+										style={{backgroundImage: `url(https://www.countryflags.io/${language}/flat/64.png)`}}
+									/>
 								</AnchorLink>
 							))}
 						</div>

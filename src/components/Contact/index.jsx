@@ -26,7 +26,7 @@ const Contact = ({placeholders}) => {
 	}
 
 	const formClass = cx(
-		'relative overflow-hidden p-8 bg-white rounded shadow-lg flex-grow-0 flex-',
+		'relative overflow-hidden p-8 bg-white rounded shadow-lg flex-grow-0',
 		{
 			'border-primary': complete,
 		},

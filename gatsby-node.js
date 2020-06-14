@@ -29,7 +29,7 @@ exports.createPages = ({graphql, actions}) => {
 	createRedirect({
 		fromPath: '/',
 		toPath: '/bg',
-		// isPermanent: 'true',
+		isPermanent: 'true',
 	})
 
 	return new Promise((resolve) => {
@@ -116,6 +116,12 @@ exports.createPages = ({graphql, actions}) => {
 								  }
 								}
 							  }
+							}
+						  }
+						  image {
+							value {
+							  description
+							  url
 							}
 						  }
 						}
@@ -208,7 +214,7 @@ exports.createPages = ({graphql, actions}) => {
 				}
 			  }
 			}
-		  }				  
+		  }						
     `).then((result) => {
 			const pages = result.data.allKontentItemPage.nodes
 

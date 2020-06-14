@@ -7,16 +7,16 @@ const Expandable = ({title, children}) => {
 	const handleExpand = () => setExpanded(!expanded)
 
 	const circleClass = cx(
-		'absolute w-3 h-3 transform md:-translate-x-10 translate-y-2 border-2 border-lite group-hover:bg-lite rounded transition duration-150',
+		'absolute w-3 h-3 transform md:-translate-x-10 translate-y-2 border-2 border-shade group-hover:bg-shade rounded transition duration-150',
 		{
-			'bg-lite': expanded,
+			'bg-shade': expanded,
 		},
 	)
 
 	const contentClass = cx(
 		'overflow-y-auto transition-all ease-in-out  duration-200',
 		{
-			'h-40 md:h-24': expanded,
+			'h-40 md:h-46': expanded,
 			'h-0': !expanded,
 		},
 	)
@@ -24,7 +24,7 @@ const Expandable = ({title, children}) => {
 	return (
 		<div className="my-4 relative group md:border-b-0 border-b-2 border-opacity-25">
 			<div className={circleClass} />
-			<h3 className="cursor-pointer pl-6 md:pl-0 mb-2 text-lg md:text-2xl" onClick={handleExpand}>{title}</h3>
+			<h2 className="cursor-pointer pl-6 md:pl-0 mb-2 font-light" onClick={handleExpand}>{title}</h2>
 			<div className="transition duration-500 h-auto">
 				<div className={contentClass}>
 					{children}

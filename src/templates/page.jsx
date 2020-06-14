@@ -2,11 +2,11 @@ import React from 'react'
 import {AnchorLink} from 'gatsby-plugin-anchor-links'
 import Layout from '../components/Layout'
 import RichText from '../components/RichText'
-import Expandable from '../components/Expandable'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import Preview from '../components/Preview'
 import SEO from '../components/SEO'
+import Products from '../components/Products'
 
 const languages = JSON.parse(process.env.GATSBY_LANG)
 
@@ -57,7 +57,7 @@ const Page = ({pageContext: {
 						<div className="flex flex-col md:flex-row justify-center items-center md:space-x-24 pt-10 md:pt-20">
 							{sections.map(({system: {codename: sectionCodename}, elements: {title: {value: sectionTitle}}}) => (
 								<AnchorLink to={`/${pageLanguage}#${sectionCodename}`} stripHash>
-									<div className="relative group">
+									<div className="relative group text-center mb-2">
 										<h1 className="text-lite font-light group-hover:text-gray-400">{sectionTitle}</h1>
 									</div>
 								</AnchorLink>
@@ -117,20 +117,7 @@ const Page = ({pageContext: {
 										<img src={sectionImageUrl} alt={sectionImageDescription} className="w-full md:w-4/6 md:pl-32" />
 									</div>
 									<div className="mt-20 text-white">
-										{productCategories.map(({elements: {title: {value: productCategory}, products: {value: products}}}) => (
-											<div className="flex flex-wrap my-10">
-												<div className="w-full md:w-2/6">
-													<h2 className="text-xl md:text-3xl">{productCategory}</h2>
-												</div>
-												<div className="w-full md:w-4/6 md:pl-32">
-													{products.map(({elements: {title: {value: productTitle}, description: productDescription}}) => (
-														<Expandable title={productTitle}>
-															<RichText content={productDescription} />
-														</Expandable>
-													))}
-												</div>
-											</div>
-										))}
+										<Products productCategories={productCategories} />
 									</div>
 								</div>
 							</Layout>

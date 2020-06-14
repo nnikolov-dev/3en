@@ -19,10 +19,10 @@ const Products = ({productCategories}) => {
 		return (
 			<>
 				<div className="flex flex-col md:flex-row flex-wrap justify-evenly text-black">
-					{productCategories.map(({elements: {title: {value: productCategory}}}, i) => (
+					{productCategories.map(({elements: {title: {value: categoryName}, image: {value: [categoryImage]}}}, i) => (
 						<div className="w-full md:w-2/4 p-2 group">
-							<Card active={i === current} onClick={handleCurrent(i)}>
-								<h1 className="text-xl font-light group-hover:text-white">{productCategory}</h1>
+							<Card active={i === current} onClick={handleCurrent(i)} image={categoryImage ? categoryImage.url : null}>
+								<h1 className="text-xl font-light group-hover:text-white">{categoryName}</h1>
 							</Card>
 						</div>
 					))}

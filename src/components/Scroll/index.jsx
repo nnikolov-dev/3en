@@ -30,6 +30,7 @@ const Scroll = () => {
 			className={scrollClass}
 			type="button"
 			onClick={handleScroll}
+			aria-label="Scroll to Top"
 		>
 			<span className="material-icons text-shade md:text-4xl">
                 keyboard_arrow_up

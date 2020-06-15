@@ -18,7 +18,7 @@ const Scroll = () => {
 	window.addEventListener('scroll', checkActive)
 
 	const scrollClass = cx(
-		'fixed bottom-0 right-0 md:bottom-8 md:right-8 z-50 p-2 md:p-4 bg-lite rounded-none md:rounded-full transition duration-150 flex items-center',
+		'fixed bottom-0 right-0 md:bottom-8 md:right-8 z-50 p-2 md:p-4 bg-lite rounded-none md:rounded-full transition duration-150 flex items-center hover:shadow-lg',
 		{
 			'opacity-100': active,
 			'opacity-0': !active,

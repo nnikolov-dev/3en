@@ -1,5 +1,7 @@
 import React from 'react'
+import {Link} from 'gatsby'
 import {AnchorLink} from 'gatsby-plugin-anchor-links'
+import CookieConsent from 'react-cookie-consent'
 import Layout from '../components/Layout'
 import RichText from '../components/RichText'
 import Contact from '../components/Contact'
@@ -30,6 +32,9 @@ const Page = ({pageContext: {
 		contact_form__gdpr_text: {value: contactGDPR},
 		contact_form__submit_button: {value: contactSubmit},
 		contact_form__submit_message: {value: contactSubmitMessage},
+		cookies__message: {value: cookiesMessage},
+		cookies__accept: {value: cookiesAccept},
+		cookies__decline: {value: cookiesDecline},
 		work_hours: workHours,
 	},
 	system: {
@@ -48,6 +53,16 @@ const Page = ({pageContext: {
 			lang={pageLanguage}
 		/>
 		<Scroll />
+		<CookieConsent
+			location="bottom"
+			buttonText={cookiesAccept}
+			declineButtonText={cookiesDecline}
+			cookieName="gatsby-gdpr-google-analytics"
+			style={{background: '#5EAAE8', color: '#FFFFFF'}}
+			buttonStyle={{background: '#304B76', color: '#FFFFFF'}}
+		>
+			{cookiesMessage}
+		</CookieConsent>
 		<header className="relative h-screen background">
 			<div className="absolute w-full h-full bg-pattern text-shade opacity-25" />
 			<div className="relative z-10 h-full pt-4 md:pt-20 md:pt-32 flex md:items-center">
@@ -66,12 +81,12 @@ const Page = ({pageContext: {
 					</div>
 					<div className="absolute left-0 bottom-8 w-full md:static md:mt-24 flex md:justify-center md:space-x-2">
 						{languages.map((language) => (
-							<AnchorLink to={`/${language}`} title={`${language} Language`}>
+							<Link to={`/${language}`} title={`${language} Language`} className="w-10 h-10 overflow-hidden hover:opacity-100 transition duration-150 flex items-center bg-lite rounded-full mx-2 opacity-50" activeClassName="opacity-100 shadow-lg">
 								<div
-									className={`${language === pageLanguage ? 'opacity-100 shadow-lg' : 'opacity-50'} bg-center bg-fill bg-no-repeat w-10 h-10 overflow-hidden hover:opacity-100 transition duration-150 flex items-center bg-lite rounded-full mx-2`}
+									className="w-full h-full bg-center bg-fill bg-no-repeat"
 									style={{backgroundImage: `url(https://www.countryflags.io/${language}/flat/64.png)`}}
 								/>
-							</AnchorLink>
+							</Link>
 						))}
 					</div>
 				</Layout>

@@ -80,6 +80,15 @@ exports.createPages = ({graphql, actions}) => {
 					  name
 					}
 				  }
+				  cookies__message {
+					value
+				  }
+				  cookies__accept {
+					value
+				  }
+				  cookies__decline {
+					value
+				  }
 				  products {
 					value {
 					  ... on kontent_item_product_category {
@@ -214,7 +223,7 @@ exports.createPages = ({graphql, actions}) => {
 				}
 			  }
 			}
-		  }						
+		  }						  
     `).then((result) => {
 			const pages = result.data.allKontentItemPage.nodes
 

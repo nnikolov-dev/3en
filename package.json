@@ -36,7 +36,7 @@
     "dotenv": "^8.2.0",
     "gatsby": "^2.18.0",
     "gatsby-plugin-anchor-links": "^1.1.1",
-    "gatsby-plugin-google-analytics": "^2.3.4",
+    "gatsby-plugin-gdpr-cookies": "^1.0.7",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^2.2.44",
     "gatsby-plugin-meta-redirect": "^1.1.1",
@@ -47,6 +47,7 @@
     "mapbox-gl": "^1.10.1",
     "prop-types": "^15.7.2",
     "react": "^16.5.1",
+    "react-cookie-consent": "^5.0.1",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
     "tailwindcss": "^1.4.6"

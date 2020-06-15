@@ -57,7 +57,7 @@ const Contact = ({placeholders}) => {
 				<div className="flex md:space-x-5 flex-col md:flex-row">
 					<input
 						type="text"
-						id="name"
+						aria-label={placeholders.contactName}
 						name="name"
 						placeholder={placeholders.contactName}
 						className="border p-2 w-full md:w-1/2 focus:border-secondary rounded bg-lite"
@@ -65,10 +65,9 @@ const Contact = ({placeholders}) => {
 						disabled={complete}
 						onChange={handleChange}
 					/>
-					<label htmlFor="name" className="hidden">{placeholders.contactName}</label>
 					<input
 						type="tel"
-						id="number"
+						aria-label={placeholders.contactTelephone}
 						name="number"
 						placeholder={placeholders.contactTelephone}
 						className="border p-2 w-full md:w-1/2 mt-3 md:mt-0 focus:border-secondary rounded bg-lite"
@@ -76,11 +75,10 @@ const Contact = ({placeholders}) => {
 						disabled={complete}
 						onChange={handleChange}
 					/>
-					<label htmlFor="number" className="hidden">{placeholders.contactTelephone}</label>
 				</div>
 				<input
 					type="email"
-					id="email"
+					aria-label={placeholders.contactEmail}
 					name="email"
 					placeholder={placeholders.contactEmail}
 					className="border p-2 w-full mt-3 focus:border-secondary rounded bg-lite"
@@ -88,11 +86,10 @@ const Contact = ({placeholders}) => {
 					disabled={complete}
 					onChange={handleChange}
 				/>
-				<label htmlFor="email" className="hidden">{placeholders.contactEmail}</label>
 				<textarea
 					cols="10"
 					rows="3"
-					id="message"
+					aria-label={placeholders.contactMessage}
 					name="message"
 					placeholder={placeholders.contactMessage}
 					className="border p-2 mt-3 w-full focus:border-secondary rounded bg-lite"
@@ -100,17 +97,15 @@ const Contact = ({placeholders}) => {
 					disabled={complete}
 					onChange={handleChange}
 				/>
-				<label htmlFor="message" className="hidden">{placeholders.contactMessage}</label>
 				<div className="flex items-baseline space-x-2 my-2">
 					<input
 						type="checkbox"
-						id="gdpr"
+						aria-label={placeholders.contactGDPR}
 						name="gdpr"
 						className="inline-block focus:border-secondary"
 						required
 						disabled={complete}
 					/>
-					<label htmlFor="gdpr" className="hidden">{placeholders.contactGDPR}</label>
 					<p className="text-shade text-sm">{placeholders.contactGDPR}</p>
 				</div>
 				<Button

@@ -7,7 +7,6 @@ const Scroll = () => {
 	const handleScroll = () => window.scrollTo({top: 0, behavior: 'smooth'})
 
 	const checkActive = () => {
-		console.log(window.pageYOffset)
 		if (!active && window.pageYOffset > 400) {
 			setActive(true)
 		} else if (active && window.pageYOffset <= 400) {

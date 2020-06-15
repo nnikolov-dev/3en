@@ -32,6 +32,10 @@ const SEO = ({title, description, keywords, lastModified, lang}) => (
 				content: 'website',
 			},
 			{
+				name: 'twitter:card',
+				content: 'summary',
+			},
+			{
 				name: 'twitter:creator',
 				content: title,
 			},

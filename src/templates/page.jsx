@@ -48,36 +48,36 @@ const Page = ({pageContext: {
 			lang={pageLanguage}
 		/>
 		<Scroll />
+		<header className="relative h-screen background">
+			<div className="absolute w-full h-full bg-pattern text-shade opacity-25" />
+			<div className="relative z-10 h-full pt-4 md:pt-20 md:pt-32 flex md:items-center">
+				<Layout>
+					<div className="w-full flex justify-center">
+						<img src={logoUrl} alt={logoAlt} className="w-32 md:w-72" />
+					</div>
+					<div className="flex flex-col md:flex-row justify-center items-center md:space-x-24 pt-4 md:pt-20">
+						{sections.map(({system: {codename: sectionCodename}, elements: {title: {value: sectionTitle}}}) => (
+							<AnchorLink to={`/${pageLanguage}#${sectionCodename}`} stripHash>
+								<div className="relative group text-center mb-4">
+									<h1 className="text-lite font-light group-hover:text-gray-400 text-xl md:text-3xl">{sectionTitle}</h1>
+								</div>
+							</AnchorLink>
+						))}
+					</div>
+					<div className="absolute left-0 bottom-8 w-full md:static md:mt-24 flex md:justify-center md:space-x-2">
+						{languages.map((language) => (
+							<AnchorLink to={`/${language}`}>
+								<div
+									className={`${language === pageLanguage ? 'opacity-100 shadow-lg' : 'opacity-50'} bg-center bg-fill bg-no-repeat w-10 h-10 overflow-hidden hover:opacity-100 transition duration-150 flex items-center bg-lite rounded-full mx-2`}
+									style={{backgroundImage: `url(https://www.countryflags.io/${language}/flat/64.png)`}}
+								/>
+							</AnchorLink>
+						))}
+					</div>
+				</Layout>
+			</div>
+		</header>
 		<main>
-			<section className="relative h-screen background">
-				<div className="absolute w-full h-full bg-pattern text-shade opacity-25" />
-				<div className="relative z-10 h-full pt-20 md:pt-32 flex items-center">
-					<Layout>
-						<div className="w-full flex justify-center">
-							<img src={logoUrl} alt={logoAlt} className="w-32 md:w-72" />
-						</div>
-						<div className="flex flex-col md:flex-row justify-center items-center md:space-x-24 pt-10 md:pt-20">
-							{sections.map(({system: {codename: sectionCodename}, elements: {title: {value: sectionTitle}}}) => (
-								<AnchorLink to={`/${pageLanguage}#${sectionCodename}`} stripHash>
-									<div className="relative group text-center mb-2">
-										<h1 className="text-lite font-light group-hover:text-gray-400">{sectionTitle}</h1>
-									</div>
-								</AnchorLink>
-							))}
-						</div>
-						<div className="md:mt-24 flex justify-center space-x-2">
-							{languages.map((language) => (
-								<AnchorLink to={`/${language}`}>
-									<div
-										className={`${language === pageLanguage ? 'opacity-100 shadow-lg' : 'opacity-50'} bg-center bg-fill bg-no-repeat w-10 h-10 overflow-hidden hover:opacity-100 transition duration-150 flex items-center bg-lite rounded-full mx-2`}
-										style={{backgroundImage: `url(https://www.countryflags.io/${language}/flat/64.png)`}}
-									/>
-								</AnchorLink>
-							))}
-						</div>
-					</Layout>
-				</div>
-			</section>
 			{sections.map(({
 				system: {codename: sectionCodename},
 				elements: {

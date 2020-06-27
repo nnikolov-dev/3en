@@ -1,7 +1,6 @@
 require('dotenv').config()
 
 const languages = JSON.parse(process.env.GATSBY_LANG)
-console.log(languages)
 
 module.exports = {
 	siteMetadata: {

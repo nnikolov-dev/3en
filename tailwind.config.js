@@ -1,4 +1,3 @@
-
 module.exports = {
 	theme: {
 		screens: {
@@ -41,6 +40,9 @@ module.exports = {
 			},
 			minHeight: {
 				half: '30vh',
+			},
+			height: {
+				main: '80vh',
 			},
 		},
 	},

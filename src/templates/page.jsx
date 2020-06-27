@@ -72,9 +72,9 @@ const Page = ({pageContext: {
 					<div className="w-full flex justify-center">
 						<img src={logoUrl} alt={logoAlt} className="w-32 md:w-72" />
 					</div>
-					<div className="flex flex-col md:flex-row justify-center items-center md:space-x-24 pt-20">
+					<div className="flex flex-col md:flex-row justify-center md:space-x-24 pt-20">
 						{sections.map(({system: {codename: sectionCodename}, elements: {title: {value: sectionTitle}}}) => (
-							<div className="p-5 shadow-lg bg-lite text-shade rounded mb-4 w-full flex-initial group hover:bg-blue-600">
+							<div className="p-5 shadow-lg bg-lite text-shade rounded mb-4 w-full flex-initial group hover:bg-blue-600 flex items-center justify-center">
 								<AnchorLink to={`/${pageLanguage}#${sectionCodename}`} stripHash>
 									<div className="relative text-center">
 										<h1 className="font-light group-hover:text-gray-400 text-2xl md:text-3xl">{sectionTitle}</h1>

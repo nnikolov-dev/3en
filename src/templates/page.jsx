@@ -11,6 +11,8 @@ import Scroll from '../components/Scroll'
 import SEO from '../components/SEO'
 import Products from '../components/Products'
 
+import waveImage from '../assets/images/wave.svg'
+
 const languages = JSON.parse(process.env.GATSBY_LANG)
 
 const Page = ({pageContext: {
@@ -64,7 +66,7 @@ const Page = ({pageContext: {
 			{cookiesMessage}
 		</CookieConsent>
 		<header className="relative h-screen md:h-main background">
-			<div className="absolute w-full h-full bg-pattern text-shade opacity-25" />
+			<div className="absolute w-full h-full text-shade opacity-25" />
 			<div className="relative z-10 h-full flex items-center">
 				<Layout>
 					<div className="w-full flex justify-center">
@@ -72,11 +74,13 @@ const Page = ({pageContext: {
 					</div>
 					<div className="flex flex-col md:flex-row justify-center items-center md:space-x-24 pt-20">
 						{sections.map(({system: {codename: sectionCodename}, elements: {title: {value: sectionTitle}}}) => (
-							<AnchorLink to={`/${pageLanguage}#${sectionCodename}`} stripHash>
-								<div className="relative group text-center mb-4">
-									<h1 className="text-lite font-light group-hover:text-gray-400 text-2xl md:text-3xl">{sectionTitle}</h1>
-								</div>
-							</AnchorLink>
+							<div className="p-5 shadow-lg bg-lite text-shade rounded mb-4 w-full flex-initial group hover:bg-blue-600">
+								<AnchorLink to={`/${pageLanguage}#${sectionCodename}`} stripHash>
+									<div className="relative text-center">
+										<h1 className="font-light group-hover:text-gray-400 text-2xl md:text-3xl">{sectionTitle}</h1>
+									</div>
+								</AnchorLink>
+							</div>
 						))}
 					</div>
 					<div className="absolute left-0 bottom-8 w-full md:static md:mt-24 flex md:justify-center md:space-x-2">
@@ -90,6 +94,9 @@ const Page = ({pageContext: {
 						))}
 					</div>
 				</Layout>
+			</div>
+			<div className="absolute bottom-0 transform translate-y-1 z-0 w-full ">
+				<img src={waveImage} alt="background wave" className="w-full" />
 			</div>
 		</header>
 		<main>
@@ -108,7 +115,7 @@ const Page = ({pageContext: {
 							<Layout>
 								<div className="flex flex-wrap">
 									<div className="w-full md:w-1/2 text-lg">
-										<h2 className="mb-6 font-thin">{sectionTitle}</h2>
+										<h2 className="mb-6 font-thin text-4xl">{sectionTitle}</h2>
 										<RichText content={sectionContent} />
 									</div>
 									<div className="w-full md:w-1/2 md:pl-32">
@@ -129,7 +136,7 @@ const Page = ({pageContext: {
 								<div className="w-full">
 									<div className="flex flex-wrap items-end">
 										<div className="w-full md:w-2/6">
-											<h2 className="mb-6 font-thin">{sectionTitle}</h2>
+											<h2 className="mb-6 font-thin text-4xl">{sectionTitle}</h2>
 											<RichText content={sectionContent} />
 										</div>
 										<img src={sectionImageUrl} alt={sectionImageDescription} className="w-full md:w-4/6 md:pl-32" />

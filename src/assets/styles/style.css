@@ -19,7 +19,7 @@ h3 {
 }
 
 .background {
-    background: linear-gradient(theme('colors.secondary'), theme('colors.shade'));
+    background: linear-gradient(theme('colors.secondary'), theme('colors.primary'));
 }
 
 .background-2 {

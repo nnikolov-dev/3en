@@ -60,7 +60,7 @@ const Contact = ({placeholders}) => {
 						aria-label={placeholders.contactName}
 						name="name"
 						placeholder={placeholders.contactName}
-						className="border p-2 w-full md:w-1/2 focus:border-secondary rounded bg-lite"
+						className="form-input border p-2 w-full md:w-1/2 focus:border-secondary rounded bg-lite"
 						required
 						disabled={complete}
 						onChange={handleChange}
@@ -70,7 +70,7 @@ const Contact = ({placeholders}) => {
 						aria-label={placeholders.contactTelephone}
 						name="number"
 						placeholder={placeholders.contactTelephone}
-						className="border p-2 w-full md:w-1/2 mt-3 md:mt-0 focus:border-secondary rounded bg-lite"
+						className="form-input border p-2 w-full md:w-1/2 mt-3 md:mt-0 focus:border-secondary rounded bg-lite"
 						required
 						disabled={complete}
 						onChange={handleChange}
@@ -81,7 +81,7 @@ const Contact = ({placeholders}) => {
 					aria-label={placeholders.contactEmail}
 					name="email"
 					placeholder={placeholders.contactEmail}
-					className="border p-2 w-full mt-3 focus:border-secondary rounded bg-lite"
+					className="form-input border p-2 w-full mt-3 focus:border-secondary rounded bg-lite"
 					required
 					disabled={complete}
 					onChange={handleChange}
@@ -92,17 +92,17 @@ const Contact = ({placeholders}) => {
 					aria-label={placeholders.contactMessage}
 					name="message"
 					placeholder={placeholders.contactMessage}
-					className="border p-2 mt-3 w-full focus:border-secondary rounded bg-lite"
+					className="form-textarea border p-2 mt-3 w-full focus:border-secondary rounded bg-lite"
 					required
 					disabled={complete}
 					onChange={handleChange}
 				/>
-				<div className="flex items-baseline space-x-2 my-2">
+				<div className="flex items-center space-x-4 my-2">
 					<input
 						type="checkbox"
 						aria-label={placeholders.contactGDPR}
 						name="gdpr"
-						className="inline-block focus:border-secondary"
+						className="form-checkbox inline-block focus:border-secondary p-2"
 						required
 						disabled={complete}
 					/>

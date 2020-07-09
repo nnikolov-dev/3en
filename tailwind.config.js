@@ -1,3 +1,5 @@
+const customForms = require('@tailwindcss/custom-forms')
+
 module.exports = {
 	theme: {
 		screens: {
@@ -53,4 +55,7 @@ module.exports = {
 		translate: ['responsive', 'hover', 'focus', 'group-hover', 'odd'],
 		visibility: ['responsive', 'hover', 'focus', 'group-hover', 'odd'],
 	},
+	plugins: [
+		customForms,
+	],
 }

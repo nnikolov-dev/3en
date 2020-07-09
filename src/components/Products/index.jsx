@@ -21,7 +21,7 @@ const Products = ({productCategories}) => {
 				<div className="flex flex-col md:flex-row flex-wrap justify-evenly text-black">
 					{productCategories.map(({elements: {title: {value: categoryName}, image: {value: [categoryImage]}}}, i) => (
 						<div className="w-full md:w-2/4 p-2 group">
-							<Card active={i === current} onClick={handleCurrent(i)} image={categoryImage ? categoryImage.url : null}>
+							<Card active={i === current} onClick={handleCurrent(i)} image={categoryImage}>
 								<h1 className="text-xl font-light group-hover:text-white">{categoryName}</h1>
 							</Card>
 						</div>
@@ -33,7 +33,7 @@ const Products = ({productCategories}) => {
 							<div className="w-full md:w-1/2 flex md:justify-end">
 								<h2 className="font-light w-full md:w-3/4 text-center md:text-right md:pr-10">{productTitle}</h2>
 							</div>
-							<div className="text-lg w-full mt-4 md:mt-0 md:w-1/2 p-2 md:pl-5 font-light rounded text-center md:text-left">
+							<div className="text-lg w-full mt-4 md:mt-0 md:w-1/2 p-2 md:pl-5 font-light rounded text-center md:text-left links">
 								<RichText content={productDescription} />
 							</div>
 						</div>

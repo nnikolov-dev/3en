@@ -73,5 +73,6 @@ module.exports = {
 				environments: ['production', 'development'],
 			},
 		},
+		'@rshackleton/gatsby-transformer-kontent-image',
 	],
 }

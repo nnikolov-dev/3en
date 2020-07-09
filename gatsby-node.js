@@ -1,4 +1,3 @@
-
 const path = require('path')
 
 // MapBox SSR
@@ -131,6 +130,15 @@ exports.createPages = ({graphql, actions}) => {
 							value {
 							  description
 							  url
+							  fluid(maxWidth: 1000) {
+								aspectRatio
+								base64
+								sizes
+								src
+								srcSet
+								srcWebp
+								srcSetWebp
+							  }
 							}
 						  }
 						}
@@ -223,10 +231,9 @@ exports.createPages = ({graphql, actions}) => {
 				}
 			  }
 			}
-		  }						  
+		  }								
     `).then((result) => {
 			const pages = result.data.allKontentItemPage.nodes
-
 			pages.forEach((page) => {
 				createPage({
 					path: `${page.system.language}`,

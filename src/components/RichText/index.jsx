@@ -50,16 +50,6 @@ const RichText = ({content, flex}) => {
 							</div>
 						)
 					}
-					if (linkedItem.system.type === 'graphic_stars') {
-						const {value: numberOfStars} = linkedItem.elements.number_of_stars
-						return (
-							<div className="flex justify-center items-center text-accent my-16 flex-wrap md:flex-nowrap">
-								{[...Array(numberOfStars)].map((_, i) => (
-									<span className="material-icons text-6xl mx-4" key={`star-${i}`}>stars</span>
-								))}
-							</div>
-						)
-					}
 					return null
 				}}
 			/>

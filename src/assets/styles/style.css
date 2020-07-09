@@ -18,6 +18,11 @@ h3 {
     @apply text-2xl;
 }
 
+.links a {
+    @apply underline;
+    @apply text-shade;
+}
+
 .background {
     background: linear-gradient(theme('colors.secondary'), theme('colors.primary'));
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import Img from 'gatsby-image'
 
 const Card = ({children, image, active, onClick}) => {
 	const cardClass = cx(
@@ -13,10 +14,13 @@ const Card = ({children, image, active, onClick}) => {
 	return (
 		<div className={cardClass} onClick={onClick}>
 			<div
-				className="bg-primary group-hover:bg-white w-32 h-32 rounded flex-shrink-0 bg-contain bg-center"
-				style={{backgroundImage: image ? `url(${image})` : 'none'}}
-			/>
-			<div className="md:ml-10 mt-2 md:ml-0">
+				className="relative bg-primary group-hover:bg-white w-32 h-32 rounded flex-shrink-0 bg-contain bg-center"
+			>
+				<div className="absolute inset-0 w-full h-full">
+					<Img fluid={image.fluid} />
+				</div>
+			</div>
+			<div className="md:ml-10 mt-2 ml-0">
 				{children}
 			</div>
 		</div>

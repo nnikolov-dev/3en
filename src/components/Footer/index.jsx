@@ -15,7 +15,7 @@ const Footer = ({title, logoUrl, logoAlt, workHours, address, lat, lng}) => (
 				</div>
 				<div className="mb-4 p-4 bg-white rounded text-black md:pr-10 shadow-lg flex flex-col-reverse md:flex-row">
 					<div className="md:mr-6">
-						<Map lat={lat} lng={lng} />
+						<Map lat={lat} lng={lng} text={title} />
 					</div>
 					<RichText content={address} />
 				</div>

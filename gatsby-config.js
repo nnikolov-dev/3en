@@ -24,6 +24,7 @@ module.exports = {
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-anchor-links',
 		'gatsby-plugin-meta-redirect',
+		'gatsby-plugin-react-leaflet',
 		{
 			resolve: 'gatsby-plugin-google-fonts',
 			options: {

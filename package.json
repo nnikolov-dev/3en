@@ -27,8 +27,6 @@
   "dependencies": {
     "@kentico/gatsby-kontent-components": "^6.0.0",
     "@kentico/gatsby-source-kontent": "^6.0.1",
-    "@loadable/component": "^5.12.0",
-    "@mapbox/geo-viewport": "^0.4.0",
     "@rshackleton/gatsby-transformer-kontent-image": "^2.0.0",
     "autoprefixer": "^9.8.0",
     "babel-preset-gatsby": "^0.4.8",
@@ -46,12 +44,14 @@
     "gatsby-plugin-offline": "^3.0.37",
     "gatsby-plugin-postcss": "^2.3.2",
     "gatsby-plugin-react-helmet": "^3.0.0",
-    "mapbox-gl": "^1.10.1",
+    "gatsby-plugin-react-leaflet": "^2.0.13",
+    "leaflet": "^1.6.0",
     "prop-types": "^15.7.2",
     "react": "^16.5.1",
     "react-cookie-consent": "^5.0.1",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
+    "react-leaflet": "^2.7.0",
     "tailwindcss": "^1.4.6"
   },
   "devDependencies": {

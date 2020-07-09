@@ -14,10 +14,10 @@ const Card = ({children, image, active, onClick}) => {
 	return (
 		<div className={cardClass} onClick={onClick}>
 			<div
-				className="relative bg-primary group-hover:bg-white w-32 h-32 rounded flex-shrink-0 bg-contain bg-center"
+				className="relative bg-primary group-hover:bg-white w-32 h-32 rounded flex-shrink-0 bg-contain bg-center overflow-hidden"
 			>
 				<div className="absolute inset-0 w-full h-full">
-					<Img fluid={image.fluid} />
+					<Img fluid={image.fluid} alt={children} />
 				</div>
 			</div>
 			<div className="md:ml-10 mt-2 ml-0">
